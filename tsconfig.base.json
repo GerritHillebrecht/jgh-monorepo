@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@jgh-monorepo/ui": ["libs/ui/src/index.ts"],
+      "@jgh/*": ["apps/jgh/src/app/*"],
+      "@jgh/modules/*": ["apps/jgh/src/app/modules/*"],
+      "@jgh/shared/*": ["apps/jgh/src/app/shared/*"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

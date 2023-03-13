@@ -1,0 +1,64 @@
+{
+  "name": "jgh-nest-server",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/jgh-nest-server/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/jgh-nest-server",
+        "main": "apps/jgh-nest-server/src/main.ts",
+        "tsConfig": "apps/jgh-nest-server/tsconfig.app.json",
+        "assets": ["apps/jgh-nest-server/src/assets"],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/jgh-nest-server/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "jgh-nest-server:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "jgh-nest-server:build:development"
+        },
+        "production": {
+          "buildTarget": "jgh-nest-server:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/jgh-nest-server/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/jgh-nest-server/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
