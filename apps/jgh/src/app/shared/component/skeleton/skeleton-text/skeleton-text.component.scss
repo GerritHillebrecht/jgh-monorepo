@@ -1,0 +1,47 @@
+.skeleton-text {
+  width: 100px;
+  height: 20px;
+  background: #eee;
+  margin-bottom: 1px;
+  background: linear-gradient(270deg, #f1f1f1, #e1e1e1, #f1f1f1);
+  background-size: 200% 100%;
+  border-radius: 4px;
+
+  -webkit-animation: gradientMoves 800ms linear infinite;
+  -moz-animation: gradientMoves 800ms linear infinite;
+  animation: gradientMoves 800ms linear infinite;
+}
+
+@-webkit-keyframes gradientMoves {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+@-moz-keyframes gradientMoves {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+@keyframes gradientMoves {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}

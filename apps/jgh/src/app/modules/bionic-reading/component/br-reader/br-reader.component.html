@@ -1,0 +1,21 @@
+<div
+  *ngIf="form.settingsForm.value as settings"
+  class="max-w-[100vw] mx-auto flex flex-row gap-4 pt-4 outline-1 outline-dotted outline-rose-400 p-4"
+  [ngStyle]="{ width: settings.containerWidth + 'px' }"
+>
+  <div
+    class="compiled-text-container text-stone-900 break-words max-w-full relative w-full"
+    [ngStyle]="{
+      opacity: settings.opacity,
+      'font-size': settings.fontSize + 'px',
+      'line-height': settings.lineHeight,
+      'letter-spacing': settings.letterSpacing + 'mm'
+    }"
+  >
+    <div *ngFor="let element of textElements" [outerHTML]="element"></div>
+
+    <jgh-monorepo-skeleton-loader
+      *ngIf="!textElements || !textElements.length"
+    ></jgh-monorepo-skeleton-loader>
+  </div>
+</div>
