@@ -1,0 +1,17 @@
+<div class="slider" sliderGesture (swipeLeft)="nextSlide()" (swipeRight)="previousSlide()">
+  <ng-container *ngFor="let slide of sliderService.slides; let index = index">
+    <jgh-monorepo-content-slider-slide
+      *ngIf="
+        [
+          sliderService.selectedSlides.get('active'),
+          sliderService.selectedSlides.get('previous')
+        ].includes(index)
+      "
+      [slide]="slide"
+      [index]="index"
+      [active]="index === sliderService.selectedSlides.get('active')"
+    ></jgh-monorepo-content-slider-slide>
+  </ng-container>
+
+  <jgh-monorepo-content-slider-pagination></jgh-monorepo-content-slider-pagination>
+</div>

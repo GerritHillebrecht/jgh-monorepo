@@ -1,0 +1,119 @@
+<div class="p-8 max-w-7xl mx-auto">
+  <mat-stepper
+    [orientation]="'horizontal'"
+    style="background-color: transparent"
+    [linear]="true"
+  >
+    <mat-step
+      state="personal"
+      [stepControl]="nameForm"
+      errorMessage="Name is required."
+    >
+      <ng-template matStepLabel>Persönliche Daten</ng-template>
+      <ng-template matStepContent>
+        <div
+          class="step rounded-xl shadow-xl bg-stone-50 p-8 sm:p-12 h-full grid grid-cols-2 gap-4 sm:gap-12 sm:m-4"
+        >
+          <div class="grid grid-flow-row gap-4">
+            <h2 class="text-lg font-bold">Willkommen bei JGH-DEV</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+              quaerat impedit quasi quo possimus sequi cum fuga accusantium,
+              dolores fugiat corporis error alias qui non labore eligendi nemo
+              nisi! Debitis.
+            </p>
+            <div>
+              <form
+                [formGroup]="nameForm"
+                class="grid grid-cols-2 gap-4 w-full"
+              >
+                <mat-form-field floatLabel="always">
+                  <mat-label>Vorname</mat-label>
+                  <input
+                    matInput
+                    formControlName="firstName"
+                    type="text"
+                    autocomplete="given-name"
+                    placeholder="John"
+                  />
+                </mat-form-field>
+                <mat-form-field floatLabel="always">
+                  <mat-label>Nachname</mat-label>
+                  <input
+                    matInput
+                    formControlName="lastName"
+                    type="text"
+                    autocomplete="family-name"
+                    placeholder="Doe"
+                  />
+                </mat-form-field>
+                <button
+                  mat-flat-button
+                  matStepperNext
+                  type="button"
+                  color="primary"
+                  style="display: inline-block !important"
+                  [disabled]="!nameForm.valid"
+                >
+                  Weiter
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="flex items-center h-full">
+            <img src="../../../../assets/images/svg/personal-data.svg" alt="" />
+          </div>
+        </div>
+      </ng-template>
+    </mat-step>
+    <mat-step state="email" [stepControl]="emailControl">
+      <ng-template matStepLabel>E-Mail</ng-template>
+      <ng-template matStepContent>
+        <div class="rounded-xl shadow-xl bg-stone-50 p-8 h-full">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            quaerat impedit quasi quo possimus sequi cum fuga accusantium,
+            dolores fugiat corporis error alias qui non labore eligendi nemo
+            nisi! Debitis.
+          </p>
+        </div>
+      </ng-template>
+    </mat-step>
+    <mat-step state="password" [stepControl]="passwordControl">
+      <ng-template matStepLabel>Zugangsdaten</ng-template>
+      <ng-template matStepContent>
+        <div class="rounded-xl shadow-xl bg-stone-50 p-8 h-full">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            quaerat impedit quasi quo possimus sequi cum fuga accusantium,
+            dolores fugiat corporis error alias qui non labore eligendi nemo
+            nisi! Debitis.
+          </p>
+        </div>
+      </ng-template>
+    </mat-step>
+    <mat-step [stepControl]="usernameControl">
+      <ng-template matStepLabel>Dies das</ng-template>
+      <ng-template matStepContent>
+        <div class="rounded-xl shadow-xl bg-stone-50 p-8 h-full">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            quaerat impedit quasi quo possimus sequi cum fuga accusantium,
+            dolores fugiat corporis error alias qui non labore eligendi nemo
+            nisi! Debitis.
+          </p>
+        </div>
+      </ng-template>
+    </mat-step>
+
+    <ng-template matStepperIcon="personal">
+      <mat-icon>badge</mat-icon>
+    </ng-template>
+    <ng-template matStepperIcon="email">
+      <mat-icon>mail</mat-icon>
+    </ng-template>
+    <ng-template matStepperIcon="password">
+      <mat-icon>lock</mat-icon>
+    </ng-template>
+  </mat-stepper>
+</div>

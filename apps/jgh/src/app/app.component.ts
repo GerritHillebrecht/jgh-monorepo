@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { NotificationService } from '@jgh/shared/service';
+import { NotificationService } from './shared/service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({

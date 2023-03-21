@@ -1,0 +1,89 @@
+@use 'sass:math';
+$max: 10;
+$animation-delay: 100ms;
+
+.slider {
+  --animation-duration: 1000ms;
+  --animation-delay: 500ms;
+
+  &_slide {
+    position: absolute;
+    display: grid;
+    inset: 0;
+    overflow: hidden;
+    perspective: 400px;
+    transition: perspective var(--animation-duration) ease-in-out;
+
+    &.show {
+      perspective: 1800px;
+
+      .slide-element {
+        animation: rotateUp var(--animation-duration) ease-in-out both;
+      }
+    }
+
+    &.hide {
+      perspective: 1800px;
+
+      .slide-element {
+        animation: rotateDown var(--animation-duration) ease-in-out both;
+      }
+    }
+
+    .slide-element {
+      position: absolute;
+      background-image: url('../../../../../assets/images/background/text/headline-background-abstract.jpg');
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      transform: rotateX(90deg);
+      opacity: 0;
+
+      @for $i from 1 through $max {
+        &-#{$i} {
+          clip-path: inset(0 ($max - $i) * 10% 0 ($i - 1) * 10% - 0.1%);
+          z-index: $max - 1;
+        }
+      }
+
+      @for $i from 1 through math.div($max, 2) {
+        $beginning: $i;
+        $end: $max - $i + 1;
+        &:nth-child(#{$beginning}) {
+          animation-delay: $beginning * $animation-delay !important;
+        }
+        &:nth-child(#{$end}) {
+          animation-delay: $beginning * $animation-delay !important;
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotateUp {
+  0% {
+    transform: rotateX(90deg) scale(1.75) translatey(-100px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(0deg) scale(1) translatey(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateDown {
+  0% {
+    transform: rotateX(0deg) scale(1) translatey(0);
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(-90deg) scale(1) translatey(-100px);
+    opacity: 0;
+  }
+}

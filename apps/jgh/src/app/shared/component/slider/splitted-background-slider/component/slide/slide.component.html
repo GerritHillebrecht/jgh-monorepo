@@ -1,0 +1,15 @@
+<div
+  class="slide"
+  [ngStyle]="{
+    'grid-template-columns': 'repeat(' + _slices.length + ', minmax(0, 1fr))',
+    'background-image': 'url(' + image + ')'
+  }"
+  [ngClass]="{ active, hide }"
+>
+  <jgh-monorepo-background-slice
+    *ngFor="let slice of _slices; let index = index"
+    [image]="image"
+    [index]="index"
+    [animationDelay]="'calc(' + index + ' * 0.1s)'"
+  ></jgh-monorepo-background-slice>
+</div>

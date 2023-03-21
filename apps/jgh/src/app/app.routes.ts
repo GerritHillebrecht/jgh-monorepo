@@ -1,6 +1,11 @@
+/* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
+  {
+    path: '',
+    loadChildren: () => import('@jgh/home').then((m) => m.HomeModule),
+  },
   {
     path: 'app',
     children: [

@@ -1,0 +1,57 @@
+.image-background {
+  background: url('https://i0.wp.com/www.frontendhero.dev/wp-content/uploads/2020/03/bg.jpeg?resize=2048%2C1425&ssl=1');
+  background-image: url('/assets/images/background/text/headline-background-abstract.jpg');
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  // filter: drop-shadow(0 0.45rem 0.25rem rgba(30, 30, 30, 0.25));
+  isolation: isolate;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0) 25%,
+      rgba(255, 255, 255, 0.25) 50%,
+      rgba(255, 255, 255, 0) 75%
+    );
+    z-index: 10;
+    mix-blend-mode: plus-lighter;
+    // background-position: 30% center;
+    background-size: 40% 100%;
+    background-repeat: no-repeat;
+    animation: slideroo 6s infinite both ease-in-out;
+  }
+}
+
+@keyframes slideroo {
+  0% {
+    background-position: -60% center;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  25% {
+    background-position: 90% center;
+  }
+  35% {
+    background-position: 20% center;
+  }
+
+  65% {
+    background-position: 160% center;
+    opacity: 1;
+  }
+  100% {
+    background-position: 160% center;
+    opacity: 0;
+  }
+}

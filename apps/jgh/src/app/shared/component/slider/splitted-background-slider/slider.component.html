@@ -1,0 +1,53 @@
+<div #slider class="slider w-full h-full relative bg-slate-900">
+  <ng-container *ngFor="let slide of slides; let index = index">
+    <jgh-monorepo-slide
+      *ngIf="index === activeSlide || index === previouslyActiveIndex"
+      [active]="true"
+      [hide]="true"
+      [image]="slide"
+    ></jgh-monorepo-slide>
+  </ng-container>
+
+  <!-- <ng-container *ngFor="let slide of slides; let index = index">
+    <div
+      *ngIf="index === activeSlide || index === previouslyActiveIndex"
+      class="slider_slide"
+      [ngStyle]="{
+        'grid-template-columns':
+          'repeat(' + elements.length + ', minmax(0, 1fr))'
+      }"
+      [ngClass]="{
+        show: activeSlide === index && initialized,
+        hide:
+          previouslyActiveIndex === index &&
+          initialized &&
+          activeSlide !== index,
+        'z-10': previouslyActiveIndex === index
+      }"
+    >
+      <div
+        *ngFor="let element of elements"
+        class="slide-element inset-0 outline-1 outline-dotted outline-purple-500 slide-element-{{
+          element + 1
+        }}"
+        [ngStyle]="{
+          'background-image': 'url(' + slide + ')'
+        }"
+      ></div>
+    </div>
+  </ng-container> -->
+
+  <div
+    class="slide-selector absolute w-full bottom-4 flex justify-center items-center gap-2 z-50"
+  >
+    <div
+      *ngFor="let slide of slides; let index = index"
+      class="w-4 h-1 rounded-xl cursor-pointer transition-all"
+      [ngClass]="{
+        'bg-rose-500 w-[2rem!important]': activeSlide === index,
+        'bg-stone-400': activeSlide !== index
+      }"
+      (click)="selectSlide(index)"
+    ></div>
+  </div>
+</div>

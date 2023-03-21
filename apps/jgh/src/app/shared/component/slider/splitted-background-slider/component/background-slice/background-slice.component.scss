@@ -1,0 +1,21 @@
+.background-slice {
+  position: absolute;
+  inset: 0;
+//   background-image: url('../../../../../assets/images/background/text/headline-background-abstract.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  transform: rotateX(90deg);
+  opacity: 0;
+
+//   @for $i from 1 through math.div($max, 2) {
+//     $beginning: $i;
+//     $end: $max - $i + 1;
+//     &:nth-child(#{$beginning}) {
+//       animation-delay: $beginning * $animation-delay !important;
+//     }
+//     &:nth-child(#{$end}) {
+//       animation-delay: $beginning * $animation-delay !important;
+//     }
+//   }
+}

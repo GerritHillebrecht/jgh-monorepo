@@ -1,0 +1,58 @@
+@use 'sass:math';
+$max: 10;
+$animation-delay: 100ms;
+
+.slide {
+  --animation-duration: 1000ms;
+  --animation-delay: 500ms;
+
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  perspective: 400px;
+  transition: perspective var(--animation-duration) ease-in-out;
+
+  &.active {
+    perspective: 1800px;
+
+    .slide-element {
+      animation: rotateUp var(--animation-duration) ease-in-out both;
+    }
+  }
+
+  &.hide {
+    perspective: 1800px;
+
+    .slide-element {
+      animation: rotateDown var(--animation-duration) ease-in-out both;
+    }
+  }
+}
+
+@keyframes rotateUp {
+  0% {
+    transform: rotateX(90deg) scale(1.75) translatey(-100px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(0deg) scale(1) translatey(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateDown {
+  0% {
+    transform: rotateX(0deg) scale(1) translatey(0);
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(-90deg) scale(1) translatey(-100px);
+    opacity: 0;
+  }
+}

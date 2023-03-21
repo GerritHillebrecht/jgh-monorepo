@@ -25,7 +25,6 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatSnackBarModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

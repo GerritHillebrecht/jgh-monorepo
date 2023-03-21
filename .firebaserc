@@ -1,0 +1,35 @@
+{
+  "targets": {
+    "jgh-development": {
+      "hosting": {
+        "jgh": [
+          "jgh-development"
+        ]
+      }
+    },
+    "jgh-development-teams": {
+      "hosting": {
+        "jgh-teams": [
+          "jgh-development-teams"
+        ]
+      }
+    },
+    "jgh-development-speed-reading": {
+      "hosting": {
+        "jgh-speed-reading": [
+          "jgh-development-speed-reading"
+        ]
+      }
+    },
+    "jgh-development-bionic-reading": {
+      "hosting": {
+        "jgh-bionic-reading": [
+          "jgh-development-bionic-reading"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "jgh-development"
+  }
+}

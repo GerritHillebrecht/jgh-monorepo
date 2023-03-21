@@ -1,0 +1,54 @@
+.background-slice {
+  --animation-duration: 1000ms;
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+//   transform: rotateX(90deg);
+    // background-attachment: fixed;
+
+  &.active {
+    animation-name: rotateUp;
+    animation-duration: var(--animation-duration);
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    z-index: 100;
+  }
+
+  &.hide {
+    animation-name: rotateDown;
+    animation-duration: var(--animation-duration);
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+  }
+}
+
+@keyframes rotateUp {
+  from {
+    transform: rotateX(90deg) scale(1.75) translateY(-100px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  to {
+    transform: rotateX(0deg) scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateDown {
+  from {
+    transform: rotateX(0deg) scale(1);
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  to {
+    transform: rotateX(-90deg) scale(1.75);
+    opacity: 0;
+  }
+}

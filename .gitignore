@@ -43,3 +43,8 @@ testem.log
 Thumbs.db
 
 .angular
+
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json
