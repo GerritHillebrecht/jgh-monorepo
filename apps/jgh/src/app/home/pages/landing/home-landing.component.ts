@@ -1,15 +1,11 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { interval, tap } from 'rxjs';
-import { ContentSliderComponent } from '../../../shared/component/slider/content-slider';
-
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 @Component({
   selector: 'jgh-monorepo-home-landing',
   templateUrl: './home-landing.component.html',
   styleUrls: ['./home-landing.component.scss'],
 })
 export class HomeLandingComponent implements OnInit, AfterViewInit {
-  @ViewChild('slider')
-  slider: ContentSliderComponent | undefined;
+  currentIndex = 0;
 
   private readonly observer = new IntersectionObserver(
     (entries) => {
@@ -29,5 +25,16 @@ export class HomeLandingComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     console.log('Home View Initialized');
+  }
+
+  changeCurrentIndex(index: number) {
+    this.currentIndex = index;
+    const projects = Array.from(document.querySelectorAll('.project'));
+    const currentProject = projects[index];
+    currentProject.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
   }
 }

@@ -1,0 +1,1 @@
+export { useOnDestroy } from './onDestroy';

@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@library/ui": ["libs/ui/src/index.ts"]
+      "@jgh-lib/ui": ["libs/ui/src/index.ts"],
+      "@jgh-monorepo/jgh-ui": ["libs/jgh-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

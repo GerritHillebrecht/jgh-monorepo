@@ -4,18 +4,23 @@ import { Route } from '@angular/router';
 export const appRoutes: Route[] = [
   {
     path: '',
-    loadChildren: () => import('@jgh/home').then((m) => m.HomeModule),
+    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'app',
-    children: [
-      {
-        path: 'bionic-reading',
-        loadChildren: () =>
-          import('@jgh/modules/bionic-reading').then(
-            (m) => m.BionicReadingModule
-          ),
-      },
-    ],
+    path: 'projects',
+    loadChildren: () =>
+      import('./projects/projects.module').then((m) => m.ProjectsModule),
   },
+  // {
+  //   path: 'app',
+  //   children: [
+  //     {
+  //       path: 'bionic-reading',
+  //       loadChildren: () =>
+  //         import('@jgh/modules/bionic-reading').then(
+  //           (m) => m.BionicReadingModule
+  //         ),
+  //     },
+  //   ],
+  // },
 ];

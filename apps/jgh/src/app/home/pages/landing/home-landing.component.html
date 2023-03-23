@@ -1,3 +1,4 @@
+<jgh-lib-content-slider></jgh-lib-content-slider>
 <!-- <jgh-monorepo-triple-text-image-section>
   <div class="h-screen" left>
     <jgh-monorepo-vertical-slider></jgh-monorepo-vertical-slider>
@@ -19,15 +20,50 @@
 <!-- <section class="h-full bg-rose-400">
   <jgh-monorepo-authentication-stepper></jgh-monorepo-authentication-stepper>
 </section> -->
-<section class="h-full sm:p-8 relative bg-stone-100 ">
-  <div class="content-wrapper w-full h-full grid grid-cols-[max-content,_auto]">
-    <div class="sm:w-80">
-
+<!-- <section class="h-full xl:p-8 relative bg-stone-100">
+  <div
+    class="content-wrapper w-full h-full grid xl:gap-1 grid-cols-[max-content,_auto]"
+  >
+    <div
+      class="w-0 overflow-x-hidden overflow-y-auto scrollbar-custom flex flex-col gap-12 lg:w-80 sm:p-8 xl:p-0"
+    >
+      <div
+        *ngFor="let slide of slider.slides; let index = index"
+        [ngClass]="{
+          'opacity-10': currentIndex !== index
+        }"
+        class="group project cursor-pointer hover:opacity-70"
+        (click)="slider.selectSlide(index)"
+      >
+        <h2
+          class="font-bold mb-2"
+          [ngClass]="{
+            'text-6xl leading-[3.75rem] text-rose-400': currentIndex === index,
+            'text-3xl': currentIndex !== index
+          }"
+        >
+          0{{ index + 1 }}
+        </h2>
+        <h3 class="text-xl font-bold">BRANDING & INTERACTION</h3>
+        <div class="tags flex flex-row gap-2">
+          <div
+            *ngFor="let tag of slide.body.tags"
+            class="rounded-2xl text-[0.5rem] leading-[0.75rem] py-1 px-2 bg-rose-400 text-stone-50"
+          >
+            {{ tag }}
+          </div>
+        </div>
+        <span class="text-sm opacity-65">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </span>
+      </div>
     </div>
-    <jgh-monorepo-content-slider #slider></jgh-monorepo-content-slider>
-    <!-- <jgh-monorepo-slider></jgh-monorepo-slider> -->
+    <jgh-monorepo-content-slider
+      #slider
+      (indexChange)="changeCurrentIndex($event)"
+    ></jgh-monorepo-content-slider>
   </div>
-</section>
+</section> -->
 <!-- <section
   class="w-full h-full bg-stone-50 grid grid-cols-3 px-8 place-items-center"
 >

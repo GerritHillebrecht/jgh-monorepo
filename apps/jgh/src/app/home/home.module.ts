@@ -1,4 +1,4 @@
-import { NgModule, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
@@ -7,7 +7,6 @@ import {
   SliderComponent,
   VerticalSliderComponent,
 } from '../shared/component/slider';
-import { AuthenticationStepperComponent } from '../shared/component/authentication-stepper/authentication-stepper.component';
 import {
   TripleTextImageSectionComponent,
   SplittedInfoScreenComponent,
@@ -16,7 +15,11 @@ import {
   InfoCardLargeComponent,
   TwInfoCardComponent,
 } from '../shared/component/card/';
-import { ContentSliderComponent } from '../shared/component/slider/content-slider/content-slider.component';
+import {
+  UiModule,
+  AuthenticationStepperComponent,
+  ContentSliderComponent,
+} from '@jgh-lib/ui';
 
 @NgModule({
   declarations: [HomeLandingComponent],
@@ -31,6 +34,8 @@ import { ContentSliderComponent } from '../shared/component/slider/content-slide
     TwInfoCardComponent,
     VerticalSliderComponent,
     ContentSliderComponent,
+    UiModule,
+    AuthenticationStepperComponent,
   ],
 })
 export class HomeModule {}

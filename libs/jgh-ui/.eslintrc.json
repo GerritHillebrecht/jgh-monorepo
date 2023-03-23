@@ -17,7 +17,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "jgh-lib",
+            "prefix": "jgh-monorepo",
             "style": "kebab-case"
           }
         ]

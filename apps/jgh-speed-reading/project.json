@@ -7,25 +7,19 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/jgh-speed-reading",
         "index": "apps/jgh-speed-reading/src/index.html",
         "main": "apps/jgh-speed-reading/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/jgh-speed-reading/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/jgh-speed-reading/src/favicon.ico",
           "apps/jgh-speed-reading/src/assets"
         ],
-        "styles": [
-          "apps/jgh-speed-reading/src/styles.scss"
-        ],
+        "styles": ["apps/jgh-speed-reading/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -81,9 +75,7 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
           "apps/jgh-speed-reading/**/*.ts",
@@ -93,9 +85,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/jgh-speed-reading/jest.config.ts",
         "passWithNoTests": true

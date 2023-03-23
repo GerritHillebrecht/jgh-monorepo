@@ -1,0 +1,32 @@
+<div class="flex flex-col gap-12 pr-6">
+  <div
+    *ngFor="let slide of slides; let index = index"
+    [ngClass]="{
+      'opacity-20': currentIndex !== index
+    }"
+    class="group project cursor-pointer hover:opacity-70"
+    (click)="changeCurrentIndex(index)"
+  >
+    <h2
+      class="font-bold mb-2"
+      [ngClass]="{
+        'text-6xl leading-tight text-rose-400': currentIndex === index,
+        'text-3xl': currentIndex !== index
+      }"
+    >
+      0{{ index + 1 }}
+    </h2>
+    <div class="tags flex flex-row gap-2 my-2" *ngIf="slide.body.tags">
+      <div
+        *ngFor="let tag of slide.body.tags"
+        class="rounded-2xl text-[0.5rem] leading-[0.75rem] py-1 px-2 bg-rose-400 text-stone-50"
+      >
+        {{ tag }}
+      </div>
+    </div>
+    <h3 class="text-xl font-bold uppercase">{{ slide.body.title }}</h3>
+    <span class="text-sm opacity-65">
+      {{ slide.body.text }}
+    </span>
+  </div>
+</div>

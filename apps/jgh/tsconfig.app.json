@@ -2,13 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": [],
-    "paths": {
-      "@jgh/*": ["apps/jgh/src/app/*"],
-      "@jgh/core/*": ["apps/jgh/src/app/core/*"],
-      "@jgh/shared/*": ["apps/jgh/src/app/shared/*"],
-      "@jgh/env/*": ["apps/jgh/src/environments/*"]
-    }
+    "types": []
   },
   "files": ["src/main.ts"],
   "include": ["src/**/*.d.ts"],

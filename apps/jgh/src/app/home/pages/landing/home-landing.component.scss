@@ -55,3 +55,10 @@
     opacity: 0;
   }
 }
+
+.project {
+  transition: opacity 200ms;
+  > * {
+    transition: 500ms font-size;
+  }
+}
