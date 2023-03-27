@@ -16,26 +16,26 @@ import {
   TwInfoCardComponent,
 } from '../shared/component/card/';
 import {
-  UiModule,
   AuthenticationStepperComponent,
   ContentSliderComponent,
 } from '@jgh-lib/ui';
+import { NavbarComponent } from '../shared/component/navbar/navbar.component';
 
 @NgModule({
   declarations: [HomeLandingComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SliderComponent,
-    AuthenticationStepperComponent,
-    SplittedInfoScreenComponent,
-    TripleTextImageSectionComponent,
-    InfoCardLargeComponent,
-    TwInfoCardComponent,
-    VerticalSliderComponent,
-    ContentSliderComponent,
-    UiModule,
-    AuthenticationStepperComponent,
+    // SliderComponent,
+    // AuthenticationStepperComponent,
+    // SplittedInfoScreenComponent,
+    // TripleTextImageSectionComponent,
+    // InfoCardLargeComponent,
+    // TwInfoCardComponent,
+    // VerticalSliderComponent,
+    // ContentSliderComponent,
+    // AuthenticationStepperComponent,
+    NavbarComponent,
   ],
 })
 export class HomeModule {}

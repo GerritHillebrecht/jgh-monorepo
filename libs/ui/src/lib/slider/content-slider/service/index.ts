@@ -1,1 +1,1 @@
-export { ContentSliderService, ContentSliderSlide as Slide } from './content-slider.service';
+export { ContentSliderService } from './content-slider.service';

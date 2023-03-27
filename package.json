@@ -21,6 +21,7 @@
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
     "@nrwl/angular": "15.8.6",
+    "@splinetool/runtime": "^0.9.273",
     "axios": "^1.0.0",
     "http-server": "^14.1.1",
     "reflect-metadata": "^0.1.13",

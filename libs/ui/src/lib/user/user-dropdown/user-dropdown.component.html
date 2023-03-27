@@ -1,0 +1,7 @@
+<jgh-lib-avatar
+  [image]="user?.displayName"
+  [matMenuTriggerFor]="menu"
+></jgh-lib-avatar>
+<mat-menu #menu="matMenu" xPosition="before">
+  <button mat-menu-item><mat-icon>logout</mat-icon> Abmelden</button>
+</mat-menu>

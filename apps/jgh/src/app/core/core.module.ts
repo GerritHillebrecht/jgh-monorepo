@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ImportModule } from './import/import.module';
+import { FirebaseImportModule } from './import/firebase.import';
 
 @NgModule({
   declarations: [],
   imports: [CommonModule],
-  exports: [ImportModule],
+  exports: [FirebaseImportModule],
 })
 export class CoreModule {}

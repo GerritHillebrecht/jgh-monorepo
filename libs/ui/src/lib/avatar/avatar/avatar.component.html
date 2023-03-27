@@ -1,0 +1,12 @@
+<div
+  class="avatar rounded-full overflow-hidden shadow-xl cursor-pointer grid place-items-center"
+  [ngStyle]="{ width: size + 'px', height: size + 'px' }"
+>
+  <img
+    [ngSrc]="_image"
+    width="{{ size }}"
+    height="{{ size }}"
+    class="object-cover"
+    [style]="{ width: size + 'px', height: size + 'px' }"
+  />
+</div>

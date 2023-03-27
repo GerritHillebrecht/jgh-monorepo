@@ -1,12 +1,13 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Application } from '@splinetool/runtime';
+
 @Component({
   selector: 'jgh-monorepo-home-landing',
   templateUrl: './home-landing.component.html',
   styleUrls: ['./home-landing.component.scss'],
 })
 export class HomeLandingComponent implements OnInit, AfterViewInit {
-  currentIndex = 0;
-
+  loaded = false;
   private readonly observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) =>
@@ -20,21 +21,22 @@ export class HomeLandingComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     console.log('Home Initialized');
+    // this.initialize3D();
     // this.observer.observe(document.querySelector('.observe') as Element);
+  }
+
+  private initialize3D() {
+    const canvas = document.getElementById('canvas3d') as HTMLCanvasElement;
+    const app = new Application(canvas);
+    app
+      .load('https://prod.spline.design/QHmhDVTOlTMRyZST/scene.splinecode')
+      .then((result) => {
+        this.loaded = true;
+        return result;
+      });
   }
 
   ngAfterViewInit(): void {
     console.log('Home View Initialized');
-  }
-
-  changeCurrentIndex(index: number) {
-    this.currentIndex = index;
-    const projects = Array.from(document.querySelectorAll('.project'));
-    const currentProject = projects[index];
-    currentProject.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-      inline: 'nearest',
-    });
   }
 }

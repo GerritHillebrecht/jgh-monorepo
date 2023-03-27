@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '@jgh/env/environment';
+import { environment } from '../../../environments/environment';
 import {
   provideAnalytics,
   getAnalytics,
@@ -10,7 +10,11 @@ import {
   UserTrackingService,
 } from '@angular/fire/analytics';
 import { provideAuth, getAuth } from '@angular/fire/auth';
-import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import {
+  provideFirestore,
+  getFirestore,
+  enableIndexedDbPersistence,
+} from '@angular/fire/firestore';
 import { provideMessaging, getMessaging } from '@angular/fire/messaging';
 import { providePerformance, getPerformance } from '@angular/fire/performance';
 import { provideStorage, getStorage } from '@angular/fire/storage';
@@ -29,4 +33,4 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
   ],
   providers: [ScreenTrackingService, UserTrackingService],
 })
-export class ImportModule {}
+export class FirebaseImportModule {}

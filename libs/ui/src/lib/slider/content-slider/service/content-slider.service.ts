@@ -1,21 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { images } from '../example.images';
+import { ContentSliderSlide } from '../model';
 
 type SlideIndex = 'active' | 'previous';
-export interface ContentSliderSlide {
-  image?: string;
-  body: {
-    title: string;
-    subtitle: string;
-    text: string;
-    tags?: string[];
-  };
-  cta: {
-    text: string;
-  };
-}
-
 @Injectable({
   providedIn: 'root',
 })
@@ -46,26 +34,12 @@ export class ContentSliderService {
         title: `Simon liabilty Center`,
         subtitle: `Branding & Interaction`,
         text: `We create high quality products to help the life of our clients and their customers.`,
-        tags: [`Branding`, `Interaction`, `Design`]
+        tags: [`Branding`, `Interaction`, `Design`],
       },
       cta: {
         text: `View Project`,
       },
-    },
-    ...Array.from({ length: this.settings.amounts.slides }, (_, index) => {
-      const slide: ContentSliderSlide = {
-        image: this.settings.defaults.images[index],
-        body: {
-          title: `Lewis creativity Studio`,
-          subtitle: `Branding & Interaction`,
-          text: `We create high quality products to help the life of our clients and their customers.`,
-        },
-        cta: {
-          text: `View Project`,
-        },
-      };
-      return slide;
-    }),
+    } as ContentSliderSlide,
   ];
 
   slices = Array.from(
@@ -85,26 +59,31 @@ export class ContentSliderService {
   });
 
   selectSlide(index: number): void {
-    this.slideIndexChange$.next(index);
-    this.selectedSlides.set('previous', this.selectedSlides.get('active') || 0);
+    console.log('[content-slider-service] SelectSlide called');
+    const activeIndex = this.selectedSlides.get('active') || 0;
+    this.selectedSlides.set('previous', activeIndex);
     this.selectedSlides.set('active', index);
+    this.slideIndexChange$.next(index);
   }
 
-  nextSlide(): void {
-    const activeIndex = this.selectedSlides.get('active') || 0;
-    const nextSlide =
-      activeIndex === this.slides.length - 1 ? 0 : activeIndex + 1;
-    this.slideIndexChange$.next(nextSlide);
-    this.selectedSlides.set('previous', activeIndex);
-    this.selectedSlides.set('active', nextSlide);
-  }
+  changeSlide(slide: number | 'next' | 'previous'): void {
+    console.log('[content-slider-service] ChangeSlide called');
+    let newIndex = 0;
 
-  previousSlide(): void {
+    if (typeof slide === 'number') {
+      newIndex = slide;
+    }
+
     const activeIndex = this.selectedSlides.get('active') || 0;
-    const nextSlide =
-      activeIndex === 0 ? this.slides.length - 1 : activeIndex - 1;
-    this.slideIndexChange$.next(nextSlide);
-    this.selectedSlides.set('previous', activeIndex);
-    this.selectedSlides.set('active', nextSlide);
+
+    if (slide === 'next') {
+      newIndex = activeIndex === this.slides.length - 1 ? 0 : activeIndex + 1;
+    }
+
+    if (slide === 'previous') {
+      newIndex = activeIndex === 0 ? this.slides.length - 1 : activeIndex - 1;
+    }
+
+    return this.selectSlide(newIndex);
   }
 }

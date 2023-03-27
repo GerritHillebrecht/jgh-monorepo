@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NotificationService } from './shared/service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { enableIndexedDbPersistence } from '@firebase/firestore';
+import { Firestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'jgh-monorepo-root',
@@ -12,10 +14,13 @@ export class AppComponent implements OnInit {
   title = 'jgh';
   constructor(
     private readonly notificationService: NotificationService,
-    private readonly snackbar: MatSnackBar
+    private readonly snackbar: MatSnackBar,
+    private readonly firestore: Firestore
   ) {}
 
   ngOnInit(): void {
+    enableIndexedDbPersistence(this.firestore);
+
     this.notificationService.notification$.subscribe(
       ({ message, type, actionLabel }) => {
         this.snackbar.open(message, actionLabel, {

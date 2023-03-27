@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AuthStepperComponent } from './auth-stepper.component';
+import { ToolbarComponent } from './toolbar.component';
 
-describe('AuthStepperComponent', () => {
-  let component: AuthStepperComponent;
-  let fixture: ComponentFixture<AuthStepperComponent>;
+describe('ToolbarComponent', () => {
+  let component: ToolbarComponent;
+  let fixture: ComponentFixture<ToolbarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AuthStepperComponent],
+      imports: [ToolbarComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AuthStepperComponent);
+    fixture = TestBed.createComponent(ToolbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

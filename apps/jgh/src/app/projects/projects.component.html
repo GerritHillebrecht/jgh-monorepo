@@ -1,19 +1,21 @@
 <section class="h-full xl:p-8 relative bg-stone-100">
   <div
+    *ngIf="projects$ | async as projects"
     class="content-wrapper w-full h-full grid xl:gap-1 grid-cols-[max-content,_auto]"
   >
     <div
-      class="w-0 overflow-x-hidden overflow-y-auto scrollbar-custom relative lg:w-80 sm:px-8 xl:px-0"
+      class="w-0 overflow-x-hidden flex flex-col justify-center overflow-y-auto scrollbar-custom relative lg:w-80 sm:px-8 xl:px-0"
     >
       <jgh-lib-content-slider-vertical-selector
         #selector
-        [slides]="slider.slides"
+        [slides]="projects"
+        [currentIndex]="slider.activeSlide"
         (selectedIndex)="slider.selectSlide($event)"
       ></jgh-lib-content-slider-vertical-selector>
     </div>
     <jgh-lib-content-slider
       #slider
-      (indexChange)="selector.changeCurrentIndex($event)"
+      [setSlides]="projects"
     ></jgh-lib-content-slider>
     <!-- <jgh-monorepo-slider></jgh-monorepo-slider> -->
   </div>

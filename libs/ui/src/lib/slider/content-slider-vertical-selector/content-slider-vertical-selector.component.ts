@@ -1,6 +1,12 @@
-import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContentSliderSlide } from '../content-slider/service/content-slider.service';
+import { ContentSliderSlide } from '../content-slider/model';
 
 @Component({
   selector: 'jgh-lib-content-slider-vertical-selector',
@@ -11,12 +17,14 @@ import { ContentSliderSlide } from '../content-slider/service/content-slider.ser
 })
 export class ContentSliderVerticalSelectorComponent implements AfterViewInit {
   @Input()
-  slides: ContentSliderSlide[] = [];  
+  slides: ContentSliderSlide[] = [];
+  
+  @Input()
+  currentIndex = 0;
 
   @Output()
   selectedIndex = new EventEmitter<number>();
 
-  currentIndex = 0;
   projects: Element[] | undefined;
 
   ngAfterViewInit(): void {
@@ -25,6 +33,7 @@ export class ContentSliderVerticalSelectorComponent implements AfterViewInit {
 
   changeCurrentIndex(index: number) {
     if (!this.projects) return;
+    if (index === this.currentIndex) return;
 
     this.selectedIndex.emit(index);
     this.currentIndex = index;

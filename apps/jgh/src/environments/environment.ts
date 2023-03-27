@@ -1,11 +1,11 @@
 export const environment = {
   firebase: {
-    projectId: 'jgh-development',
-    appId: '1:267841739075:web:c031d8edcbaa441db637f6',
-    storageBucket: 'jgh-development.appspot.com',
-    apiKey: 'AIzaSyA7_9yDtEBdDKwNVDV10UC3sOQAuwab0rU',
-    authDomain: 'jgh-development.firebaseapp.com',
-    messagingSenderId: '267841739075',
-    measurementId: 'G-CWVGDQX60M',
+    apiKey: 'AIzaSyCGy79V05jkflNKgqoS3GQSGW0eZSO3TQk',
+    authDomain: 'jgh-dev.firebaseapp.com',
+    projectId: 'jgh-dev',
+    storageBucket: 'jgh-dev.appspot.com',
+    messagingSenderId: '618089823952',
+    appId: '1:618089823952:web:b3d7396d0d57470005a8d5',
+    measurementId: 'G-FRNV01R56L',
   },
 };

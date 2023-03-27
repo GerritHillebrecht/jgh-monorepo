@@ -10,6 +10,22 @@
   &.active {
     perspective: 1800px;
     z-index: 60;
+
+    .turbulence {
+      filter: url(#turbulence);
+      transform: scale(1.01);
+    }
+  }
+
+  .slide-overlay {
+    mix-blend-mode: multiply;
+    background-image: radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+
+    animation: breathe 5s ease-in-out infinite both;
   }
 
   .slices {
@@ -60,5 +76,23 @@
   }
   to {
     opacity: 0.7;
+  }
+}
+
+@keyframes breathe {
+  0% {
+    filter: hue-rotate(0deg);
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    filter: hue-rotate(90deg);
+    opacity: 0.85;
+    transform: scale(1.1);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+    opacity: 0.15;
+    transform: scale(1);
   }
 }
