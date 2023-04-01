@@ -1,0 +1,10 @@
+<div class="image-card relative rounded-xl aspect-[13/16] p-12 overflow-hidden">
+  <picture class="absolute inset-0">
+    <source *ngIf="image.avif" [srcset]="image.avif" type="image/avif" />
+    <source *ngIf="image.webp" [srcset]="image.webp" type="image/webp" />
+    <img [src]="image.jpg" class="w-full h-full object-cover" />
+  </picture>
+  <div class="relative z-10 h-full">
+    <ng-content></ng-content>
+  </div>
+</div>

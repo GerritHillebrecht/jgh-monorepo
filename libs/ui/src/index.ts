@@ -9,3 +9,15 @@ export { AvatarHeroComponent } from './lib/avatar/avatar-hero/avatar-hero.compon
 export { ToolbarComponent } from './lib/toolbar/toolbar.component';
 
 export { UserDropdownComponent } from './lib/user/user-dropdown/user-dropdown.component';
+export {
+  TeamCardComponent,
+  Trainer,
+} from './lib/cards/team-card/team-card.component';
+export { FullWidthInfoBarComponent } from './lib/design blocks/full-width-info-bar/full-width-info-bar.component';
+export { PurchasePlanCardComponent } from './lib/cards/purchase-plan-card/purchase-plan-card.component';
+export { FullImageCardComponent } from './lib/cards/full-image-card/full-image-card.component';
+
+export {
+  TestimonialComponent,
+  BTTestimonial,
+} from './lib/testimonials/testimonial/testimonial.component';

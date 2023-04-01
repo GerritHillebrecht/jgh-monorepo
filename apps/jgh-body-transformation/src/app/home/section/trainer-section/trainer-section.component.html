@@ -1,0 +1,22 @@
+<section class="min-h-full flex items-center py-12 dotted-background">
+  <div class="max-w-7xl w-full mx-auto flex flex-col gap-8 sm:gap-20 px-8">
+    <div
+      class="text flex flex-col gap-4 items-center sm:max-w-[40%] mx-auto text-center text-stone-700"
+    >
+      <span class="uppercase">Gym Trainers</span>
+      <h2 class="text-6xl font-bold">Your Gymbros</h2>
+      <p>
+        Our expert team of coaches helps you succeed in any goal. Make your body
+        great again.
+      </p>
+    </div>
+    <div
+      class="grid sm:grid-cols-3 sm:grid-rows-1 grid-rows-3 md:portrait:grid-cols-3 gap-8"
+    >
+      <jgh-bt-trainer-card
+        *ngFor="let trainer of trainers"
+        [trainer]="trainer"
+      ></jgh-bt-trainer-card>
+    </div>
+  </div>
+</section>

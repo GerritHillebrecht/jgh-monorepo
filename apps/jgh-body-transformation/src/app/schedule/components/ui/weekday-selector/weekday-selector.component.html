@@ -1,0 +1,15 @@
+<div class="flex flex-row gap-2 w-full justify-center items-center">
+  <div
+    class="rounded-3xl cursor-pointer border-solid border-[1px] border-stone-200 px-8 py-2 font-bold text-sm hover:bg-red-500 hover:text-stone-50"
+    *ngFor="let weekday of scheduleService.weekdays; let index = index"
+    (click)="scheduleService.selectWeekday(index)"
+    [ngClass]="{
+      'bg-red-500 text-stone-50':
+        (scheduleService.selectedWeekday$ | async) === index,
+      'bg-white text-stone-700':
+        (scheduleService.selectedWeekday$ | async) !== index
+    }"
+  >
+    {{ weekday }}
+  </div>
+</div>

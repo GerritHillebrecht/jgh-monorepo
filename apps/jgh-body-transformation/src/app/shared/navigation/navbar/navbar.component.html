@@ -1,0 +1,20 @@
+<jgh-lib-toolbar position="fixed">
+  <div
+    class="absolute inset-0"
+    [ngClass]="{ 'bg-black': (scrollDistance$ | async)! > 0 }"
+  ></div>
+  <div class="flex items-center justify-between w-full relative z-10">
+    <img
+      [ngSrc]="'assets/images/logo/bt-logo-48.png'"
+      height="40"
+      width="98"
+      style="height: 40px"
+    />
+    <div class="lg:landscape:flex items-center gap-4 hidden">
+      <button mat-button *ngFor="let link of links" class="hover:text-red-500" [routerLink]="['/', link.path]">
+        {{ link.label }}
+      </button>
+    </div>
+    <jgh-lib-user-dropdown></jgh-lib-user-dropdown>
+  </div>
+</jgh-lib-toolbar>

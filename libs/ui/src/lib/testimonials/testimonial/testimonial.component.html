@@ -1,0 +1,25 @@
+<div
+  *ngIf="testimonial"
+  class="grid grid-cols-[2fr,3fr] h-full bg-slate-900 px-8 gap-20"
+>
+  <div class="relative">
+    <img
+      [src]="testimonial.image"
+      class="w-full h-[110%] object-cover -translate-y-[5%] rounded-xl aspect-[13/16]"
+    />
+  </div>
+  <div class="relative flex flex-col justify-center text-stone-50">
+    <h3 class="quote text-2xl leading-relaxed mb-6 relative">
+      <fa-icon
+        [icon]="quoteLeft"
+        size="2xl"
+        class="absolute text-slate-700 scale-[2] origin-bottom-left"
+      ></fa-icon>
+      <span class="relative z-10">
+        {{ testimonial.quote }}
+      </span>
+    </h3>
+    <span class="text-md font-bold">{{ testimonial.name }}</span>
+    <span class="opacity-70 font-light">- {{ testimonial.position }}</span>
+  </div>
+</div>

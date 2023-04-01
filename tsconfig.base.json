@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@jgh-lib/ui": ["libs/ui/src/index.ts"],
-      "@jgh-monorepo/jgh-ui": ["libs/jgh-ui/src/index.ts"]
+      "@jgh-lib/ui/maps/*": ["libs/ui/src/lib/maps/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

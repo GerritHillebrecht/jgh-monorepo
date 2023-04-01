@@ -1,0 +1,23 @@
+.image-card {
+  picture {
+    transition: 0.25s transform ease-in-out;
+  }
+  &:hover {
+    picture {
+      transform: scale(1.1);
+    }
+
+    &::after {
+      opacity: 0.2;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: black;
+    opacity: 0.3;
+    transition: 0.25s opacity ease-in-out;
+  }
+}

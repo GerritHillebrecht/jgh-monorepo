@@ -27,9 +27,23 @@
           "jgh-development-bionic-reading"
         ]
       }
+    },
+    "jgh-dev-body-transformation": {
+      "hosting": {
+        "jgh-body-transformation": [
+          "jgh-dev-body-transformation"
+        ]
+      }
+    },
+    "jgh-developement-car-rental": {
+      "hosting": {
+        "jgh-car-rental": [
+          "jgh-developement-car-rental"
+        ]
+      }
     }
   },
   "projects": {
-    "default": "jgh-development"
+    "default": "jgh-developement-car-rental"
   }
 }

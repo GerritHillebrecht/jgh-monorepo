@@ -1,0 +1,28 @@
+.image {
+  position: relative;
+
+  &.radialBackground {
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at 50% 80%,
+        hsl(0, 100%, 50%) 0%,
+        hsl(0, 100%, 50%) 12%,
+        hsla(0, 100%, 50%, 0.8) 12%,
+        hsla(0, 100%, 50%, 0.8) 24%,
+        hsla(0, 100%, 50%, 0.6) 24%,
+        hsla(0, 100%, 50%, 0.6) 36%,
+        hsla(0, 100%, 50%, 0.4) 36%,
+        hsla(0, 100%, 50%, 0.4) 48%,
+        hsla(0, 100%, 50%, 0.2) 48%,
+        hsla(0, 100%, 50%, 0) 60%
+      );
+      // background-size: 50%;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      mix-blend-mode: multiply;
+    }
+  }
+}

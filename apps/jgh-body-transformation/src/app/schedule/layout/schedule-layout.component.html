@@ -1,0 +1,30 @@
+<jgh-lib-full-width-info-bar
+  image="https://images.unsplash.com/photo-1611988615248-5d4f0b9ac31e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+>
+  <div class="text-center text-stone-200 flex flex-col gap-4">
+    <span class="tracking-[0.2rem] uppercase font-bold text-sm"
+      >save the date</span
+    >
+    <h2
+      class="text-6xl m-0 uppercase font-bold tracking-wide"
+    >
+      WELLSPIRIT DAY
+    </h2>
+  </div>
+</jgh-lib-full-width-info-bar>
+<section class="dotted-background">
+  <div class="mx-auto max-w-7xl w-full py-12 flex flex-col gap-8">
+    <jgh-bt-weekday-selector></jgh-bt-weekday-selector>
+    <div
+      class="flex flex-col gap-2"
+      *ngIf="scheduleService.courses$ | async as courses; else loading"
+    >
+      <jgh-bt-course-card
+        *ngFor="let course of courses"
+        [course]="course"
+      ></jgh-bt-course-card>
+    </div>
+  </div>
+</section>
+
+<ng-template #loading>loading...</ng-template>

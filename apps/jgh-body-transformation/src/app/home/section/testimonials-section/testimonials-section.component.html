@@ -1,0 +1,18 @@
+<section
+  class="min-h-full flex flex-col justify-center bg-stone-300 py-12 gap-12"
+>
+  <div class="flex flex-col gap-2">
+    <h2 class="text-center text-5xl text-stone-700 font-bold">
+      What our members say
+    </h2>
+    <span class="text-center block">Our favorite quotes</span>
+  </div>
+  <div
+    class="m-auto max-w-5xl w-full relative py-28 border-solid border-[1px] border-stone-100 rounded-xl"
+  >
+    <jgh-lib-testimonial
+      *ngFor="let testimonial of testimonials"
+      [testimonial]="testimonial"
+    ></jgh-lib-testimonial>
+  </div>
+</section>

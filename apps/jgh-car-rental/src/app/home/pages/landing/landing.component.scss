@@ -1,0 +1,83 @@
+section {
+  overflow: hidden;
+  position: relative;
+
+  .background-image {
+    position: absolute;
+    background-image: url('../../../../assets/images/background/Download.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    mask-image: url('../../../../assets/images/background/hexagon-pattern.png'),
+      radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 1) 100%
+      );
+    mask-composite: subtract;
+    // mix-blend-mode: soft-light;
+  }
+
+//   &::after {
+//     content: '';
+//     position: absolute;
+//     inset: 0;
+//     background: radial-gradient(
+//       circle,
+//       rgba(255, 255, 255, 1),
+//       rgba(255, 255, 255, 0) 80%
+//     );
+//     opacity: 0.2;
+//     mix-blend-mode: saturation;
+//     // z-index: 2;
+//   }
+}
+
+// .hexagons {
+//   position: relative;
+//   overflow: hidden;
+//   height: 100vh;
+//   animation: animate 4s linear infinite;
+//   z-index: 100;
+// }
+// @keyframes animate {
+//   0% {
+//     filter: hue-rotate(0deg);
+//   }
+//   100% {
+//     filter: hue-rotate(360deg);
+//   }
+// }
+// .row {
+//   display: inline-flex;
+//   margin-left: -50px;
+//   margin-top: -32px;
+//   overflow: hidden;
+// }
+// .row:nth-child(even) {
+//   margin-left: 1px;
+// }
+// .hexagon {
+//   position: relative;
+//   height: 110px;
+//   width: 100px;
+//   background: #111;
+//   margin: 5px;
+//   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+//   transition: 2s;
+// }
+// .hexagon:before {
+//   content: '';
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 50%;
+//   height: 100%;
+//   pointer-events: none;
+//   background: rgba(255, 255, 255, 0.02);
+// }
+// .hexagon:hover {
+//   transition: 0s;
+//   background: #0f0;
+//   cursor: alias;
+// }
