@@ -11,6 +11,11 @@ export const appRoutes: Route[] = [
       import('./courses/courses.module').then((m) => m.CoursesModule),
   },
   {
+    path: 'plans',
+    loadChildren: () =>
+      import('./pricing/pricing.module').then((m) => m.PricingModule),
+  },
+  {
     path: 'gym',
     loadChildren: () =>
       import('./thegym/thegym.module').then((m) => m.ThegymModule),

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TestimonialComponent, BTTestimonial } from '@jgh-lib/ui';
+import { HeadlineBlockComponent } from '@jgh-lib/ui/typographie/headline-block/headline-block.component';
 
 @Component({
   selector: 'jgh-bt-testimonials-section',
   standalone: true,
-  imports: [CommonModule, TestimonialComponent],
+  imports: [CommonModule, TestimonialComponent, HeadlineBlockComponent],
   templateUrl: './testimonials-section.component.html',
   styleUrls: ['./testimonials-section.component.scss'],
 })

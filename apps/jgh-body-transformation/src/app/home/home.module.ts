@@ -10,7 +10,6 @@ import { TrainerSectionComponent } from './section/trainer-section/trainer-secti
 import { MatIconModule } from '@angular/material/icon';
 import { PurchasePlanSectionComponent } from './section/purchase-plan-section/purchase-plan-section.component';
 import { TestimonialsSectionComponent } from './section/testimonials-section/testimonials-section.component';
-
 @NgModule({
   declarations: [HomeLayoutComponent],
   imports: [

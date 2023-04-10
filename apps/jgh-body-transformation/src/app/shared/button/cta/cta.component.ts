@@ -12,4 +12,5 @@ import { MatIconModule } from '@angular/material/icon';
 export class CtaComponent {
   @Input() bgColor = 'bg-stone-50';
   @Input() textColor = 'text-stone-900';
+  @Input() active = false;
 }

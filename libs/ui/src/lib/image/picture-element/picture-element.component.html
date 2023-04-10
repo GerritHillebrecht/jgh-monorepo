@@ -1,0 +1,19 @@
+<picture
+  *ngIf="imageSrcs"
+  [ngClass]="{ 'relative block w-full h-full': fitToParent }"
+>
+  <ng-container *ngFor="let srcs of imageSrcs">
+    <source
+      *ngFor="let src of srcs.images"
+      media="(orientation: {{ srcs.orientation }}) and (max-width: {{
+        srcs.size
+      }}px)"
+      [srcset]="src.src"
+      [type]="'image/' + src.type"
+    />
+  </ng-container>
+  <img
+    [ngClass]="{ 'absolute inset-0 object-cover h-full w-full': fitToParent }"
+    src="assets/images/background/home/landscape/1920/background-main.jpg"
+  />
+</picture>

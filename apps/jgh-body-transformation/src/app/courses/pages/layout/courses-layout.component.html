@@ -1,33 +1,48 @@
-<section class="w-full h-2/5 relative flex bg-black">
+<!-- <section class="w-full h-2/5 relative flex bg-black">
   <img
     src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
     class="max-w-3xl mx-auto w-full h-full object-cover"
   />
-</section>
-<section class="min-h-full flex items-center">
-  <div class="mx-auto w-full max-w-6xl grid grid-cols-3 gap-8 p-8">
-    <jgh-lib-full-image-card
-      *ngFor="let course of courses | async"
-      [image]="course.image"
-    >
-      <div class="relative h-full flex flex-col justify-end gap-8">
-        <span>
-          <h3 class="text-2xl font-bold text-stone-50 mb-2">
-            {{ course.title }}
-          </h3>
-          <div class="flex w-full gap-4">
-            <span class="text-sm text-stone-50 flex items-center gap-2">
-              <mat-icon class="material-icons-outlined">badge</mat-icon>
-              {{ course.trainer }}
-            </span>
-            <span class="text-sm text-stone-50 flex items-center gap-2">
-              <mat-icon>schedule</mat-icon>
-              {{ course.duration }} min
-            </span>
-          </div>
-        </span>
-        <jgh-bt-cta>Join Course</jgh-bt-cta>
-      </div>
-    </jgh-lib-full-image-card>
-  </div>
-</section>
+</section> -->
+<div class="bg-stone-50">
+  <jgh-lib-full-width-info-bar
+    image="assets/images/design-block/courses.jpg"
+    [blackAndWhite]="true"
+  >
+    <jgh-lib-headline-block>
+      <span subtitle class="text-stone-50">save the date</span>
+      <span class="uppercase text-stone-50">WELLSPIRIT DAY</span>
+      <span description class="text-stone-50">
+        Our expert team of coaches helps you succeed in any goal. Make your body
+        great again.
+      </span>
+    </jgh-lib-headline-block>
+  </jgh-lib-full-width-info-bar>
+  <section class="min-h-full flex items-center">
+    <div class="mx-auto w-full max-w-6xl grid grid-cols-3 gap-8 p-8">
+      <jgh-lib-full-image-card
+        *ngFor="let course of courses | async"
+        [image]="course.image"
+      >
+        <div class="relative h-full flex flex-col justify-end gap-8">
+          <span>
+            <h3 class="text-2xl font-bold text-stone-50 mb-2">
+              {{ course.title }}
+            </h3>
+            <div class="flex w-full gap-4">
+              <span class="text-sm text-stone-50 flex items-center gap-2">
+                <mat-icon class="material-icons-outlined">badge</mat-icon>
+                {{ course.trainer }}
+              </span>
+              <span class="text-sm text-stone-50 flex items-center gap-2">
+                <mat-icon>schedule</mat-icon>
+                {{ course.duration }} min
+              </span>
+            </div>
+          </span>
+          <jgh-bt-cta>Join Course</jgh-bt-cta>
+        </div>
+      </jgh-lib-full-image-card>
+    </div>
+  </section>
+</div>

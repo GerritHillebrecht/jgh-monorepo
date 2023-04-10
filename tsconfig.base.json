@@ -16,7 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@jgh-lib/ui": ["libs/ui/src/index.ts"],
-      "@jgh-lib/ui/maps/*": ["libs/ui/src/lib/maps/*"]
+      "@jgh-lib/ui/*": ["libs/ui/src/lib/*"],
+      "@jgh-lib/ui/maps/*": ["libs/ui/src/lib/maps/*"],
+      "@jgh-lib/ui/typographie/*": ["libs/ui/src/lib/typographie/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

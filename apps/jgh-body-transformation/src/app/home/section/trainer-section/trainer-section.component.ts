@@ -7,11 +7,12 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import { Trainer } from '@jgh-lib/ui';
+import { HeadlineBlockComponent } from '@jgh-lib/ui/typographie/headline-block/headline-block.component';
 
 @Component({
   selector: 'jgh-bt-trainer-section',
   standalone: true,
-  imports: [CommonModule, TrainerCardComponent],
+  imports: [CommonModule, TrainerCardComponent, HeadlineBlockComponent],
   templateUrl: './trainer-section.component.html',
   styleUrls: ['./trainer-section.component.scss'],
 })

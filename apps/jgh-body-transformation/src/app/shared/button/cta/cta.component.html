@@ -1,12 +1,16 @@
 <button
-  class="cta relative bg-white px-8 py-4 flex items-center gap-2 {{ bgColor }}"
+  class="cta relative px-8 py-4 flex items-center gap-2"
+  [ngClass]="{
+    'after:border-white bg-stone-50 text-stone-800': !active,
+    'after:border-red-600 bg-red-600 text-stone-50': active
+  }"
 >
   <span
-    class="uppercase text-sm font-bold leading-none flex items-center relative top-[1px] {{
-      textColor
-    }}"
+    class="uppercase text-sm font-bold leading-none flex items-center relative top-[1px]"
   >
     <ng-content></ng-content>
   </span>
-  <mat-icon color="warn">arrow_forward</mat-icon>
+  <mat-icon [ngClass]="{ 'text-stone-50': active, 'text-red-600': !active }">
+    arrow_forward
+  </mat-icon>
 </button>

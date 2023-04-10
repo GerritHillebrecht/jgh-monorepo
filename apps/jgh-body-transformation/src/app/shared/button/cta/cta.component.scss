@@ -3,7 +3,8 @@
     content: '';
     position: absolute;
     inset: 0;
-    border: 1px solid #fff;
+    border-style: solid;
+    border-width: 1px;
     opacity: 0.45;
     transform: translateX(0.75rem) translateY(-0.75rem);
     transition: 350ms transform ease-out;

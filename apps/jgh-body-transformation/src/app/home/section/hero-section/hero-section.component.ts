@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CtaComponent } from '../../../shared/button/cta/cta.component';
+import { PictureElementComponent } from '@jgh-lib/ui/image/picture-element/picture-element.component';
 
 @Component({
   selector: 'jgh-bt-hero-section',
   standalone: true,
-  imports: [CommonModule, CtaComponent],
+  imports: [CommonModule, CtaComponent, PictureElementComponent],
   templateUrl: './hero-section.component.html',
   styleUrls: ['./hero-section.component.scss'],
 })

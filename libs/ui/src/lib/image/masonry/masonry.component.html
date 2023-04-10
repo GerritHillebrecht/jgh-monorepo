@@ -1,0 +1,13 @@
+<div class="grid grid-cols-3 gap-4 mb-4">
+  <ng-container *ngFor="let image of images">
+    <jgh-lib-picture-block
+      *ngIf="typeOfPicutreBlockElement(image)"
+      [imageSet]="image"
+    ></jgh-lib-picture-block>
+    <jgh-lib-picture-block
+      *ngIf="!typeOfPicutreBlockElement(image)"
+      [image]="image"
+    >
+    </jgh-lib-picture-block>
+  </ng-container>
+</div>

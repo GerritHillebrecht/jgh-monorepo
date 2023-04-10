@@ -7,3 +7,13 @@ section {
     // background-image: url('../../../../assets/images/background/background-main-2.jpg')
   }
 }
+
+.image-wrapper {
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: black;
+    opacity: 0.2;
+  }
+}

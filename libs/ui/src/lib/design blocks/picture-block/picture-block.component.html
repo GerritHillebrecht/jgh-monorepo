@@ -1,0 +1,12 @@
+<picture [ngClass]="{ 'relative w-full h-full': fitToParent }">
+  <source
+    *ngFor="let image of imageSet"
+    media="(max-width: {{ image.size }}px)"
+    [srcset]="image.src"
+    [type]="image.type"
+  />
+  <img
+    [src]="image"
+    [ngClass]="{ 'absolute inset-0 object-cover': fitToParent }"
+  />
+</picture>
