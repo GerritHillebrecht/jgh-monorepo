@@ -1,0 +1,16 @@
+<section class="py-12 bg-stone-50">
+  <jgh-lib-info-accordion-block>
+    <span title>FAQ</span>
+    <span headline> Frequently asked questions </span>
+    <ng-container accordions>
+      <jgh-lib-accordion-element
+        *ngFor="let accordion of accordionElements; let i = index"
+        [accordion]="accordion"
+        [index]="i"
+      >
+        <span title> {{ accordion.title }} </span>
+        <span content> {{ accordion.content }} </span>
+      </jgh-lib-accordion-element>
+    </ng-container>
+  </jgh-lib-info-accordion-block>
+</section>

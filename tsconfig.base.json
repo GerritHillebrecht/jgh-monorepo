@@ -18,7 +18,8 @@
       "@jgh-lib/ui": ["libs/ui/src/index.ts"],
       "@jgh-lib/ui/*": ["libs/ui/src/lib/*"],
       "@jgh-lib/ui/maps/*": ["libs/ui/src/lib/maps/*"],
-      "@jgh-lib/ui/typographie/*": ["libs/ui/src/lib/typographie/*"]
+      "@jgh-lib/ui/typographie/*": ["libs/ui/src/lib/typographie/*"],
+      "@jgh-lib/utility/*": ["libs/utility/src/lib/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

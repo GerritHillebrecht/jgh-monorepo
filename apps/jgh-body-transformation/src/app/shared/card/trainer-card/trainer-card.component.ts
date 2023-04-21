@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TeamCardComponent, Trainer } from '@jgh-lib/ui';
+import { RotateInDirective } from '../../directive/rotate-in.directive';
 
 @Component({
   selector: 'jgh-bt-trainer-card',

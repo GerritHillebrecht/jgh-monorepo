@@ -7,25 +7,19 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/jgh-car-rental",
         "index": "apps/jgh-car-rental/src/index.html",
         "main": "apps/jgh-car-rental/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/jgh-car-rental/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/jgh-car-rental/src/favicon.ico",
           "apps/jgh-car-rental/src/assets"
         ],
-        "styles": [
-          "apps/jgh-car-rental/src/styles.scss"
-        ],
+        "styles": ["apps/jgh-car-rental/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -81,9 +75,7 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
           "apps/jgh-car-rental/**/*.ts",
@@ -93,9 +85,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/jgh-car-rental/jest.config.ts",
         "passWithNoTests": true

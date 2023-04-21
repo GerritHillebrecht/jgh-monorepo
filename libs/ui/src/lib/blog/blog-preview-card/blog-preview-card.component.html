@@ -1,0 +1,19 @@
+<div class="relative flex flex-col gap-2 overflow-hidden">
+  <div class="relative w-full aspect-video overflow-hidden mb-2">
+    <img
+      class="absolute w-full h-full object-cover hover:scale-110 transition-all"
+      [src]="blogPost.image"
+    />
+  </div>
+  <span class="text-xs opacity-70">
+    By {{ blogPost.author }} | {{ blogPost.date | date : 'MMMM d, y' }} |
+    {{ blogPost.topic }}
+  </span>
+  <span class="text-2xl text-stone-800 font-bold uppercase tracking-wider">
+    {{ blogPost.title }}
+  </span>
+  <span class="text-sm line-clamp-2">
+    {{ blogPost.body | truncate : 180 }}
+  </span>
+  <ng-content select="[cta]"></ng-content>
+</div>

@@ -1,0 +1,15 @@
+.animate {
+  animation: bgColor 5s infinite ease-in-out;
+}
+
+@keyframes bgColor {
+  10% {
+    border-color: rgb(220 38 38);
+    background-color: rgb(220 38 38);
+  }
+  5%,
+  15% {
+    border-color: rgb(245, 245, 245);
+    background-color: transparent;
+  }
+}

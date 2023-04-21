@@ -46,10 +46,6 @@ export class NavbarComponent {
       path: 'gym',
     },
     {
-      label: 'Impressions',
-      path: 'impressions',
-    },
-    {
       label: 'Blog',
       path: 'blog',
     },

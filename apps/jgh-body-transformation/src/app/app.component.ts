@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { ScrollService } from './core/service/scroll.service';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'jgh-bt-root',
@@ -9,6 +10,7 @@ import { ScrollService } from './core/service/scroll.service';
 })
 export class AppComponent implements OnInit {
   title = 'jgh-body-transformation';
+  private readonly router = inject(Router);
 
   scrollService = inject(ScrollService);
 
@@ -16,5 +18,11 @@ export class AppComponent implements OnInit {
     fromEvent<Event>(window, 'scroll').subscribe(() =>
       this.scrollService.scrollDistance$.next(window.scrollY)
     );
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+      }
+    });
   }
 }

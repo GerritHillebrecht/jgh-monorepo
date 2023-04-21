@@ -1,0 +1,29 @@
+<div
+  class="accordion-grid mx-auto max-w-[1392px] rounded-3xl overflow-hidden bg-slate-100 w-full grid lg:grid-rows-1 lg:grid-cols-2"
+  [ngClass]="{ rtl }"
+  [ngStyle]="{ 'background-color': backgroundColor }"
+>
+  <!-- Text Area -->
+  <div
+    class="text-area p-8 sm:px-20 sm:py-16 flex flex-col gap-6 text-stone-700"
+  >
+    <span class="uppercase font-bold text-sm tracking-widest">
+      <ng-content select="[title]"></ng-content>
+    </span>
+
+    <span class="text-[2.5rem] leading-[1.2] font-bold mb-4">
+      <ng-content select="[headline]"></ng-content>
+    </span>
+
+    <div
+      class="accordion-wrapper rounded-xl overflow-hidden flex flex-col gap-1"
+    >
+      <ng-content select="[accordions]"></ng-content>
+    </div>
+  </div>
+
+  <!-- Image Area -->
+  <div class="image-area hidden sm:block relative min-h-[100px] w-full">
+    <img class="absolute inset-0 w-full h-full object-cover" [src]="image" />
+  </div>
+</div>

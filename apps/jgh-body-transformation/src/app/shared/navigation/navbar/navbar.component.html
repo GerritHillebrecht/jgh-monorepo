@@ -11,7 +11,13 @@
       style="height: 40px"
     />
     <div class="lg:landscape:flex items-center gap-4 hidden">
-      <button mat-button *ngFor="let link of links" class="hover:text-red-500" [routerLink]="['/', link.path]">
+      <button
+        mat-button
+        *ngFor="let link of links"
+        class="hover:text-red-500"
+        [routerLink]="['/', link.path]"
+        routerLinkActive="active"
+      >
         {{ link.label }}
       </button>
     </div>

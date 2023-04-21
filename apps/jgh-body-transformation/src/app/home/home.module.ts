@@ -10,6 +10,8 @@ import { TrainerSectionComponent } from './section/trainer-section/trainer-secti
 import { MatIconModule } from '@angular/material/icon';
 import { PurchasePlanSectionComponent } from './section/purchase-plan-section/purchase-plan-section.component';
 import { TestimonialsSectionComponent } from './section/testimonials-section/testimonials-section.component';
+import { DetailsSectionComponent } from './section/details-section/details-section.component';
+import { SectionDetailsComponent } from './section/section-details/section-details.component';
 @NgModule({
   declarations: [HomeLayoutComponent],
   imports: [
@@ -19,12 +21,14 @@ import { TestimonialsSectionComponent } from './section/testimonials-section/tes
     // CONTENT
     // Utility
     ShareBarComponent,
+    FullWidthInfoBarComponent,
     // Sections
     HeroSectionComponent,
     TrainerSectionComponent,
     PurchasePlanSectionComponent,
     TestimonialsSectionComponent,
-    FullWidthInfoBarComponent,
+    DetailsSectionComponent,
+    SectionDetailsComponent,
   ],
 })
 export class HomeModule {}

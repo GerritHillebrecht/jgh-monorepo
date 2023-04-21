@@ -1,11 +1,27 @@
-<section class="relative">
+<section class="relative" [ngClass]="{ 'linear-gradient': linearGradient }">
   <div
-    class="absolute inset-0 bg-center bg-cover bg-no-repeat"
+    class="absolute inset-0 bg-center bg-no-repeat"
     [ngClass]="{ 'saturate-0': blackAndWhite }"
-    [ngStyle]="{ 'background-image': 'url(' + image + ')' }"
+    [ngStyle]="{
+      'background-image': 'url(' + image + ')',
+      'background-color': backgroundColor,
+      'background-size': fit,
+      'background-position-y': bgPositionY,
+      'background-position-x': bgPositionX
+    }"
   ></div>
-  <div class="mx-auto max-w-7xl w-full py-24 px-8 xl:px-0">
-    <div class="relative z-[2]">
+  <div
+    class="mx-auto max-w-7xl w-full px-8 xl:px-0"
+    [ngClass]="{
+      'min-h-[20vh]': height === 'sm',
+      'min-h-[40vh]': height === 'md',
+      'min-h-[60vh]': height === 'lg',
+      'min-h-[80vh]': height === 'xl',
+      'min-h-full': height === 'full',
+      'flex items-center': contentCentered
+    }"
+  >
+    <div class="relative z-[2] w-full">
       <ng-content></ng-content>
     </div>
   </div>

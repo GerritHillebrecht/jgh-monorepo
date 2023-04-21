@@ -1,7 +1,17 @@
-<section class="min-h-full bg-rose-400 relative flex items-center">
-  <div class="mx-auto max-w-5xl w-full flex gap-4">
-    <jgh-lib-purchase-plan-card
-      *ngFor="let plan of plans"
-    ></jgh-lib-purchase-plan-card>
+<jgh-bt-dotted-section
+  sectionClasses="bg-stone-50 dotted-background p-8 flex items-center gap-8 overflow-hidden"
+>
+  <div class="shrink w-1/4">
+    <jgh-lib-headline-block>
+      <span subtitle class="text-stone-600">Gym Plans</span>
+      <span class="uppercase text-stone-600">Choose your plan</span>
+      <span description class="text-stone-600">
+        Our expert team of coaches helps you succeed in any goal. Make your body
+        great again.
+      </span>
+    </jgh-lib-headline-block>
   </div>
-</section>
+  <div class="grow">
+    <jgh-bt-plans [plans]="plans"></jgh-bt-plans>
+  </div>
+</jgh-bt-dotted-section>

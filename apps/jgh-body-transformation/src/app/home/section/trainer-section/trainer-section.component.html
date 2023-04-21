@@ -3,7 +3,12 @@
     <div
       class="text flex flex-col gap-4 items-center sm:max-w-[40%] mx-auto text-center text-stone-700"
     >
-      <jgh-lib-headline-block>
+      <jgh-lib-headline-block
+        observe
+        [threshold]="1"
+        [oneIteration]="false"
+        class="opacity-0"
+      >
         <span subtitle>Gym Trainers</span>
         <span class="uppercase">Your Gymbros</span>
         <span description>
@@ -14,10 +19,17 @@
     </div>
     <div
       class="grid sm:grid-cols-3 sm:grid-rows-1 grid-rows-3 md:portrait:grid-cols-3 gap-8"
+      style="perspective: 800px"
     >
       <jgh-bt-trainer-card
-        *ngFor="let trainer of trainers"
+        *ngFor="let trainer of trainers; let i = index"
         [trainer]="trainer"
+        jghBtRotateIn
+        [oneIteration]="false"
+        [threshold]="0"
+        rotateDuration="600ms"
+        class="opacity-0"
+        [ngStyle]="{ 'animation-delay': i * 0.2 + 's' }"
       ></jgh-bt-trainer-card>
     </div>
   </div>

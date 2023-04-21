@@ -6,6 +6,7 @@ import {
   ViewChildren,
 } from '@angular/core';
 import { PictureBlockElement } from '@jgh-lib/ui/design blocks/picture-block/picture-block.component';
+import Swiper, { Navigation, Pagination, Keyboard } from 'swiper';
 
 @Component({
   selector: 'jgh-bt-gym-layout',
@@ -14,6 +15,34 @@ import { PictureBlockElement } from '@jgh-lib/ui/design blocks/picture-block/pic
 })
 export class GymLayoutComponent implements OnInit, AfterViewInit {
   @ViewChildren('.slide') slides: QueryList<HTMLDivElement> | undefined;
+
+  swiper = new Swiper('.swiper', {
+    direction: 'horizontal',
+    loop: true,
+
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+    },
+
+    pagination: {
+      el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+
+    // configure Swiper to use modules
+    modules: [Navigation, Pagination, Keyboard],
+  });
 
   images: (PictureBlockElement | string)[] = [
     'https://images.unsplash.com/photo-1675379067601-252f63636654?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80',
@@ -29,6 +58,7 @@ export class GymLayoutComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this.swiper.init();
     const slides = document.querySelectorAll('.slide');
     console.log('slides', this.slides?.toArray());
   }

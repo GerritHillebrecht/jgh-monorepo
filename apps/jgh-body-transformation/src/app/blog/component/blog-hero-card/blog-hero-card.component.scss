@@ -1,0 +1,70 @@
+.radial-gradient {
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 60%
+  );
+}
+.radial-gradient-lighten {
+  mix-blend-mode: multiply;
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 255) 0%,
+    rgba(255, 255, 255, 255) 60%
+  );
+}
+
+.animate {
+  animation: breathe 5s infinite alternate ease-in-out;
+}
+
+@keyframes breathe {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-blur {
+  animation: blur 5s infinite 3s;
+}
+
+@keyframes blur {
+  10% {
+    transform: scale(1);
+    filter: blur(0);
+  }
+  13% {
+    transform: scale(1.1);
+    filter: blur(15px);
+  }
+  16% {
+    transform: scale(1);
+    filter: blur(0);
+  }
+  19% {
+    transform: scale(1.1);
+    filter: blur(15px);
+  }
+  22% {
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.fadeInLeft {
+  animation: fadeInLeft 250ms ease-in-out both;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

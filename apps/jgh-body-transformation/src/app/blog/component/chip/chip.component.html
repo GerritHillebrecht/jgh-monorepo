@@ -1,0 +1,12 @@
+<div
+  class="rounded-3xl border-2 border-inherit py-1 px-4 text-xs transition-all"
+  [ngClass]="{
+    animate,
+    'border-red-600': primaryColor,
+    'bg-red-600 border-red-600 text-stone-50 font-bold': active,
+    'border-stone-200': passiveColor && !active
+}"
+  [ngStyle]="{ 'animation-delay': animationDelay }"
+>
+  <ng-content></ng-content>
+</div>

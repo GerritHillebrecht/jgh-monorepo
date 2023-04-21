@@ -8,11 +8,19 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { Trainer } from '@jgh-lib/ui';
 import { HeadlineBlockComponent } from '@jgh-lib/ui/typographie/headline-block/headline-block.component';
+import { RotateInDirective } from '../../../shared/directive/rotate-in.directive';
+import { ObserveDirective } from '@jgh-lib/utility/observe';
 
 @Component({
   selector: 'jgh-bt-trainer-section',
   standalone: true,
-  imports: [CommonModule, TrainerCardComponent, HeadlineBlockComponent],
+  imports: [
+    CommonModule,
+    TrainerCardComponent,
+    HeadlineBlockComponent,
+    RotateInDirective,
+    ObserveDirective,
+  ],
   templateUrl: './trainer-section.component.html',
   styleUrls: ['./trainer-section.component.scss'],
 })

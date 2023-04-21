@@ -5,4 +5,10 @@ button {
   &:hover {
     color: red !important;
   }
+
+  &.active {
+    border-bottom: 2px solid #ff0000;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 }

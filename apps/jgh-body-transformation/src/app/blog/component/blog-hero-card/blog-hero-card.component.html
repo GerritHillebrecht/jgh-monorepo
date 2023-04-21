@@ -1,0 +1,72 @@
+<article
+  id="article"
+  class="blog-hero h-full relative rounded-lg overflow-hidden shadow-2xl animate"
+  [ngStyle]="{ 'background-color': backgroundColor }"
+>
+  <div class="absolute inset-0 radial-gradient z-10 opacity-30"></div>
+  <!-- <div class="absolute inset-0 radial-gradient-lighten z-10 opacity-80"></div> -->
+  <div class="absolute inset-0">
+    <img
+      class="w-full h-full"
+      [src]="image"
+      [ngStyle]="{ 'object-position': posY + ' ' + posX, 'object-fit': fit }"
+      [ngClass]="{ 'animate-blur': pulse }"
+    />
+  </div>
+  <div class="absolute inset-0 flex items-center pl-16 z-20">
+    <div class="max-w-xl">
+      <jgh-lib-headline-block>
+        <span subtitle class="fadeInLeft text-stone-100" style="animation-delay: 50ms">
+          <span [innerHTML]="textContent?.subheadline"></span>
+        </span>
+        <span
+          class="uppercase text-8xl text-stone-100 fadeInLeft"
+          style="animation-delay: 150ms"
+        >
+          <span [innerHTML]="textContent?.headline"></span>
+        </span>
+        <span
+          description
+          class="text-stone-100 fadeInLeft"
+          style="
+            font-family: Roboto;
+            font-style: normal !important;
+            animation-delay: 250ms;
+          "
+        >
+          <span [innerHtml]="textContent?.description"></span>
+        </span>
+      </jgh-lib-headline-block>
+    </div>
+  </div>
+  <!-- <div class="absolute inset-0 flex flex-col justify-end">
+    <div class="relative p-12">
+      <div class="relative z-10 flex flex-col gap-2 text-stone-100">
+        <span class="text-xs uppercase font-bold tracking-[0.2rem]">
+          <span class="cursor-pointer hover:underline"> Olivia Rhyne</span>
+          &bull; 20 Jan 2022
+        </span>
+        <span class="text-3xl font-bold flex items-center gap-2 cursor-pointer">
+          <mat-icon color="warn">double_arrow</mat-icon>
+          UX Review presentation
+        </span>
+        <span class="text-sm opacity-80">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+          voluptate, quod, quia.
+        </span>
+        <div class="tags flex gap-2 mt-2">
+          <jgh-bt-chip
+            *ngFor="
+              let chip of ['Design', 'Research', 'Presentation'];
+              let i = index
+            "
+            [animate]="true"
+            [animationDelay]="i * 500 + 'ms'"
+          >
+            {{ chip }}
+          </jgh-bt-chip>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</article>

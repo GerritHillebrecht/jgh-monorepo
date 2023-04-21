@@ -1,60 +1,71 @@
-import { AfterViewInit, Component, ViewEncapsulation } from '@angular/core';
-
-interface Plan {
-  name: string;
-  description: string;
-  slogan: string;
-  price: number;
-}
+import { Component, inject } from '@angular/core';
+import { PricingService } from '../service/pricing.service';
+import { Accordion } from '@jgh-lib/ui/design blocks/info-accordion-block/model/accordion.model';
 
 @Component({
   selector: 'jgh-bt-pricing-layout',
   templateUrl: './pricing-layout.component.html',
   styleUrls: ['./pricing-layout.component.scss'],
 })
-export class PricingLayoutComponent implements AfterViewInit {
-  plans: Plan[] = [
+export class PricingLayoutComponent {
+  protected pricingService = inject(PricingService);
+  elements: Accordion['elements'] = [
     {
-      name: 'Basic',
-      description:
-        'Access hours are from 9am to 5pm. Use all the equipment and facilities.',
-      slogan: 'Train your ass off',
-      price: 19.99,
+      title: 'Deine Lieblingsinhalte auf einem einzigen Startbildschirm.',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel lacinia ultricies, nisl nisl aliquet nisl, eget aliquet nisl nunc eget nisl. Sed euismod, nunc vel lacinia ultricies, nisl nisl aliquet nisl, eget aliquet nisl nunc eget nisl.',
     },
     {
-      name: 'Premium',
-      description:
-        'Train with your Gymbros, relax in the spa area or dive off in the pool. Come in at any time and push your body with supplements tailered to your needs.',
-      slogan: 'All the perks. All the time.',
-      price: 39.99,
+      title: 'Steuerung per Sprachbefehl.',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel lacinia ultricies, nisl nisl aliquet nisl, eget aliquet nisl nunc eget nisl. Sed euismod, nunc vel lacinia ultricies, nisl nisl aliquet nisl, eget aliquet nisl nunc eget nisl.',
     },
     {
-      name: 'Ultimate',
-      description:
-        'Power up your body with a personal Gymbro and bring all your friends, all the time.',
-      slogan: 'Everything, with everyone',
-      price: 79.99,
+      title: 'Erstklassiger Sound in jedem Raum.',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel lacinia ultricies, nisl nisl aliquet nisl, eget aliquet nisl nunc eget nisl. Sed euismod, nunc vel lacinia ultricies, nisl nisl aliquet nisl, eget aliquet nisl nunc eget nisl.',
+    },
+    {
+      title:
+        'Inhalte mit deinem kompatiblen Smartphone auf den großen Bildschirm streamen.',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel lacinia ultricies, nisl nisl aliquet nisl, eget aliquet nisl nunc eget nisl. Sed euismod, nunc vel lacinia ultricies, nisl nisl aliquet nisl, eget aliquet nisl nunc eget nisl.',
+    },
+    {
+      title:
+        'Deine schönsten Erinnerungen mit Google Fotos auf dem Fernseher ansehen.',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel lacinia ultricies, nisl nisl aliquet nisl, eget aliquet nisl nunc eget nisl. Sed euismod, nunc vel lacinia ultricies, nisl nisl aliquet nisl, eget aliquet nisl nunc eget nisl.',
     },
   ];
-
-  ngAfterViewInit(): void {
-    const cards = document.querySelectorAll('.plan-card');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((card) => {
-          card.target.classList.toggle('show', card.isIntersecting);
-          if (card.isIntersecting) {
-            observer.unobserve(card.target);
-          }
-        });
+  accordeons: Accordion[] = [
+    {
+      title: 'Alle Entertainment-Optionen an einem Ort.',
+      subtitle: 'Organisation',
+      rtl: false,
+      colors: {
+        background: '#F8E1D8',
+        elements: '#F3D2C5',
       },
-      {
-        threshold: 0.3,
-      }
-    );
-
-    cards.forEach((card) => {
-      observer.observe(card);
-    });
-  }
+      image:
+        'https://images.unsplash.com/photo-1627483298235-f3bac2567c1c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+      elements: this.elements,
+    },
+    {
+      title: 'Alle Entertainment-Optionen an einem Ort.',
+      subtitle: 'Organisation',
+      rtl: true,
+      image:
+        'https://images.unsplash.com/photo-1627483298235-f3bac2567c1c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+      elements: this.elements,
+    },
+    {
+      title: 'Alle Entertainment-Optionen an einem Ort.',
+      subtitle: 'Organisation',
+      rtl: false,
+      image:
+        'https://images.unsplash.com/photo-1627483298235-f3bac2567c1c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+      elements: this.elements,
+    },
+  ];
 }

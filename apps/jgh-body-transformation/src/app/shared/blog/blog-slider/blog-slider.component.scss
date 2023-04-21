@@ -1,0 +1,37 @@
+.slider {
+  transition: background-color 250ms ease-in-out;
+  //   background-image: url('../../../../assets/images/background/blog/meshed-gradient.jpg');
+  //   background-size: cover;
+}
+
+.hue-bg {
+  background: radial-gradient(100% 244.46% at 0% 0%, #ccff00 0%, #ff027c 100%),
+    radial-gradient(50% 122.23% at 50% 50%, #9aa4ff 0%, #306c00 100%),
+    radial-gradient(100.45% 245.58% at 0% 0%, #000afe 0%, #70ff00 100%),
+    linear-gradient(127.43deg, #7b0007 0%, #8f73ff 100%);
+  background-blend-mode: lighten, color-dodge, difference, normal;
+
+  animation: hueRotate 6s infinite ease-in-out;
+  mix-blend-mode: lighten;
+  opacity: 0.25;
+}
+
+.radial-gradient {
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+      circle at center 30%,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 60%
+    );
+    opacity: 0.15;
+  }
+}
+
+@keyframes hueRotate {
+  to {
+    filter: hue-rotate(360deg);
+  }
+}

@@ -21,3 +21,4 @@ export {
   TestimonialComponent,
   BTTestimonial,
 } from './lib/testimonials/testimonial/testimonial.component';
+export { InfoAccordionBlockComponent } from './lib/design blocks/info-accordion-block/info-accordion-block.component';

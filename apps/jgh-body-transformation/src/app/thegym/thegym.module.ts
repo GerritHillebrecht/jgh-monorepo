@@ -8,6 +8,7 @@ import { GoogleMapsComponent } from '@jgh-lib/ui/maps/google-maps';
 import { PictureBlockComponent } from '@jgh-lib/ui/design blocks/picture-block/picture-block.component';
 import { MasonryComponent } from '@jgh-lib/ui/image/masonry/masonry.component';
 import { HeadlineBlockComponent } from '@jgh-lib/ui/typographie/headline-block/headline-block.component';
+import { HighlightSliderComponent } from '@jgh-lib/ui/slider/highlight-slider/highlight-slider.component';
 
 @NgModule({
   declarations: [GymLayoutComponent],
@@ -17,7 +18,8 @@ import { HeadlineBlockComponent } from '@jgh-lib/ui/typographie/headline-block/h
     GoogleMapsComponent,
     PictureBlockComponent,
     MasonryComponent,
-    HeadlineBlockComponent
+    HeadlineBlockComponent,
+    HighlightSliderComponent,
   ],
 })
 export class ThegymModule {}
