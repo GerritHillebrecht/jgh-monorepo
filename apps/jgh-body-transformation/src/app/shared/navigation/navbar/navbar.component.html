@@ -17,6 +17,7 @@
         class="hover:text-red-500"
         [routerLink]="['/', link.path]"
         routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
       >
         {{ link.label }}
       </button>

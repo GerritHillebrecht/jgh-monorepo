@@ -1,37 +1,47 @@
 <section class="bg-stone-50">
   <div
-    class="mx-auto max-w-[1600px] w-full bg-stone-200 py-20 px-16 flex flex-col gap-8"
+    class="mx-auto max-w-[1600px] w-full bg-stone-200 py-20 px-4 md:px-8 lg:px-16 flex flex-col gap-8"
   >
-    <span class="text-9xl uppercase font-bold text-center block">
+    <span
+      class="text-7xl lg:text-9xl uppercase font-semibold text-center block"
+    >
       The studio
     </span>
-    <span class="text-lg text-center block">
+    <span class="text-lg text-center block playfair">
       The studio is located in the heart of Hamburg, in the district of Altona.
       It is easily accessible by public transport and by car.
     </span>
-    <div class="grid grid-cols-3 gap-8 mt-12">
+    <div
+      class="grid portrait:grid-rows-3 landscape:grid-cols-3 gap-8 mt-4 lg:mt-12"
+    >
       <div
+        observe
+        [oneIteration]="false"
+        [threshold]="0.1"
         *ngFor="let card of detailsCards"
-        class="group rounded-xl flex flex-col bg-stone-50 overflow-hidden hover:-translate-y-3 transition-all"
+        class="group opacity-0"
       >
-        <div class="relative aspect-[16/11] rounded-md overflow-hidden">
-          <img
-            class="absolute w-full h-full"
-            [src]="card.image"
-          />
-        </div>
-        <div class="content p-8 border-b-[1px] border-solid border-stone-200">
-          <p class="font-light text-sm text-stone-900">Equipment</p>
-          <p class="font-bold text-xl">
-            Huge selection of new and high-quality equipment
-          </p>
-        </div>
-        <div class="content p-8">
-          <div class="flex justify-between items-center">
-            <p class="text-sm"><span class="font-bold">Workout</span> pcs.</p>
-            <div class="flex items-center">
-              <span class="mr-2">about</span>
-              <span class="text-4xl font-bold">200</span>
+        <div class="flex flex-col rounded-xl hover:-translate-y-3 transition-all bg-stone-50 overflow-hidden">
+          <div class="relative aspect-[16/11] rounded-md overflow-hidden">
+            <img
+              class="absolute w-full h-full saturate-0 contrast-125 group-hover:contrast-100 group-hover:saturate-100 transition-all"
+              [src]="card.image"
+            />
+          </div>
+          <div class="content p-8 border-b-[1px] border-solid border-stone-200">
+            <p
+              class="font-light text-sm text-stone-900"
+              [innerHTML]="card.subtitle"
+            ></p>
+            <p class="font-bold text-xl" [innerHTML]="card.title"></p>
+          </div>
+          <div class="content p-8">
+            <div class="flex justify-between items-center">
+              <p class="text-sm"><span class="font-bold">Workout</span> pcs.</p>
+              <div class="flex items-center">
+                <span class="mr-2">about</span>
+                <span class="text-4xl font-bold">200</span>
+              </div>
             </div>
           </div>
         </div>

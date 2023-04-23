@@ -17,7 +17,6 @@ import { AccordionService } from '../service/accordion.service';
   styleUrls: ['./accordion-element.component.scss'],
 })
 export class AccordionElementComponent {
-  @Input() accordion?: AccordionElement;
   @Input() index = 0;
   @Input() color?: string;
   @Output() setActiveAccordion = new EventEmitter<number>();

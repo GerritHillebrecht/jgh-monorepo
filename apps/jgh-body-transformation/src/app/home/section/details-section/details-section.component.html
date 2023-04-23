@@ -1,12 +1,27 @@
-<section class="py-12 bg-stone-50">
-  <jgh-lib-info-accordion-block>
-    <span title>FAQ</span>
-    <span headline> Frequently asked questions </span>
+<section class="py-12 bg-stone-50 px-4 lg:px-0">
+  <jgh-lib-info-accordion-block
+    backgroundColor="rgb(248,225,216)"
+    image="assets/images/background/home/faq-2.jpg"
+  >
+    <span title>All you need to know</span>
+    <span headline>At Home at Gymbros</span>
     <ng-container accordions>
+      <jgh-lib-accordion-element [index]="0" color="rgb(243,210,197)">
+        <span title>What does training at Gymbros look like?</span>
+        <span content>
+          <span class="block">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+            vitae rem rerum numquam perspiciatis! Fugiat, magni rem eaque vel
+            illum atque vero unde beatae voluptas maiores corporis debitis culpa
+            cum.
+          </span>
+          <jgh-bt-cta class="mt-8 block">SHOW ME THE MONEY</jgh-bt-cta>
+        </span>
+      </jgh-lib-accordion-element>
       <jgh-lib-accordion-element
+        color="rgb(243,210,197)"
         *ngFor="let accordion of accordionElements; let i = index"
-        [accordion]="accordion"
-        [index]="i"
+        [index]="i + 1"
       >
         <span title> {{ accordion.title }} </span>
         <span content> {{ accordion.content }} </span>
