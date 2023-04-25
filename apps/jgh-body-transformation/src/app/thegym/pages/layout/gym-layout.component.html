@@ -1,13 +1,36 @@
-<jgh-lib-highlight-slider></jgh-lib-highlight-slider>
-
-<section class="h-full relative bg-white dark:bg-stone-800">
+<section class="h-full relative">
   <!-- Slider main container -->
-  <div class="swiper bg-rose-400 pt-20">
+  <div class="swiper bg-rose-400 w-full h-full">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
       <div class="swiper-slide">
-        <div class="relative aspect-[16/6] bg-stone-50 w-screen"></div>
+        <div class="relative w-full h-full bg-purple-400">
+          <div
+            class="relative w-full h-full grid place-items-center bg-center bg-cover after:content-[''] after:h-1/6 after:absolute after:w-full after:bg-gradient-to-b after:from-black after:top-0 after:opacity-60"
+            style="
+              background-image: url('assets/images/background/blog/info-block/block-3.jpg');
+            "
+          >
+            <div class="relative">
+              <h3
+                class="text-stone-50 text-2xl uppercase font-bold mb-2 tracking-[0.2em] mix-blend-overlay"
+              >
+                Feel at home at
+              </h3>
+              <h1
+                class="shiny-headline text-9xl font-black text-stone-50 tracking-wide leading-[5.65rem]"
+              >
+                GYMBROS
+              </h1>
+              <h1
+                class="shiny-headline text-9xl font-black text-stone-50 tracking-wide -scale-y-100 leading-[5.65rem] opacity-20"
+              >
+                GYMBROS
+              </h1>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!-- If we need pagination -->
@@ -21,55 +44,15 @@
     <!-- <div class="swiper-scrollbar"></div> -->
   </div>
 </section>
-
-<section
-  class="relative h-full p-12 bg-stone-50 flex items-center justify-center"
->
-  <div
-    class="scroll-wrapper scrollbar-none relative flex flex-col flex-wrap gap-4 w-full h-full overflow-x-auto"
-    style="scroll-snap-type: x mandatory"
-  >
-    <div class="slide relative w-full h-full snap-start flex items-center">
-      <div class="mx-auto max-w-4xl w-full flex flex-col gap-4">
-        <jgh-lib-headline-block>
-          <span subtitle class="text-stone-700">gym-area</span>
-          <span class="uppercase text-stone-700">Build your body</span>
-          <span description class="text-stone-700">
-            Give your muscles the pump they deserve.
-          </span>
-        </jgh-lib-headline-block>
-        <div
-          class="rounded-xl aspect-[2] w-full bg-rose-400 bg-center bg-cover"
-          style="
-            background-image: url(https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80);
-          "
-        ></div>
-        <div class="grid grid-cols-3 gap-4">
-          <div
-            class="rounded-xl aspect-[2] bg-rose-400 bg-center bg-cover"
-            style="
-              background-image: url(https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=775&q=80);
-            "
-          ></div>
-          <div
-            class="rounded-xl aspect-[2] bg-rose-400 bg-center bg-cover"
-            style="
-              background-image: url(https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
-            "
-          ></div>
-          <div
-            class="rounded-xl aspect-[2] bg-rose-400 bg-center bg-cover"
-            style="
-              background-image: url(https://images.unsplash.com/photo-1596357395217-80de13130e92?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80);
-            "
-          ></div>
-        </div>
+<section class="flex items-center bg-stone-50">
+  <jgh-bt-dotted-section class="w-full min-h-full">
+    <div class="mx-auto w-full max-w-7xl py-20 px-4 lg:px-12">
+      <span class="text-5xl uppercase font-bold block mb-8">
+        <fa-icon [icon]="location"></fa-icon> You can find us here
+      </span>
+      <div class="rounded-xl overflow-hidden shadow-xl">
+        <jgh-lib-google-maps height="60vh"></jgh-lib-google-maps>
       </div>
     </div>
-    <div class="slide relative w-full h-full bg-purple-400 snap-start"></div>
-    <div class="slide relative w-full h-full bg-red-400 snap-start"></div>
-    <div class="slide relative w-full h-full bg-yellow-400 snap-start"></div>
-  </div>
+  </jgh-bt-dotted-section>
 </section>
-
-<jgh-lib-google-maps></jgh-lib-google-maps>

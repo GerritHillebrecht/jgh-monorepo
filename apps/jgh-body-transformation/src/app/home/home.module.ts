@@ -12,6 +12,7 @@ import { PurchasePlanSectionComponent } from './section/purchase-plan-section/pu
 import { TestimonialsSectionComponent } from './section/testimonials-section/testimonials-section.component';
 import { DetailsSectionComponent } from './section/details-section/details-section.component';
 import { SectionDetailsComponent } from './section/section-details/section-details.component';
+import { SectionVideoComponent } from './section/section-video/section-video.component';
 @NgModule({
   declarations: [HomeLayoutComponent],
   imports: [
@@ -29,6 +30,7 @@ import { SectionDetailsComponent } from './section/section-details/section-detai
     TestimonialsSectionComponent,
     DetailsSectionComponent,
     SectionDetailsComponent,
+    SectionVideoComponent,
   ],
 })
 export class HomeModule {}

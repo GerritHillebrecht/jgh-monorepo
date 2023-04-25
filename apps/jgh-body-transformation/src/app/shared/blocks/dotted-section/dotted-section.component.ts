@@ -20,8 +20,10 @@ export class DottedSectionComponent implements AfterViewInit {
   @ViewChild('section') section!: ElementRef<HTMLElement>;
 
   ngAfterViewInit(): void {
-    this.sectionClasses.split(' ').forEach((sectionClass) => {
-      this.section.nativeElement.classList.add(sectionClass);
-    });
+    if (this.sectionClasses.length > 0) {
+      this.sectionClasses.split(' ').forEach((sectionClass) => {
+        this.section.nativeElement.classList.add(sectionClass);
+      });
+    }
   }
 }

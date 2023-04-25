@@ -12,13 +12,18 @@ export class ObserveDirective implements AfterViewInit {
   constructor(private readonly el: ElementRef<HTMLElement>) {}
 
   private readonly observerCallback = (entries: IntersectionObserverEntry[]) =>
-    entries.forEach((entry) => {
-      entry.target.classList.toggle('show', entry.isIntersecting);
+    entries.forEach(
+      (entry) => {
+        entry.target.classList.toggle('show', entry.isIntersecting);
 
-      if (entry.isIntersecting && this.oneIteration) {
-        this.observer.unobserve(entry.target);
+        if (entry.isIntersecting && this.oneIteration) {
+          this.observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: this.threshold,
       }
-    });
+    );
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
   private readonly observer = new IntersectionObserver(this.observerCallback, {

@@ -4,6 +4,7 @@ import { ToolbarComponent, UserDropdownComponent } from '@jgh-lib/ui';
 import { MatButtonModule } from '@angular/material/button';
 import { ScrollService } from '../../../core/service/scroll.service';
 import { RouterModule } from '@angular/router';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 interface Navlink {
   label: string;
@@ -20,6 +21,7 @@ interface Navlink {
     MatButtonModule,
     NgOptimizedImage,
     RouterModule,
+    MatTooltipModule,
   ],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],

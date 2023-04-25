@@ -9,6 +9,8 @@ import { PictureBlockComponent } from '@jgh-lib/ui/design blocks/picture-block/p
 import { MasonryComponent } from '@jgh-lib/ui/image/masonry/masonry.component';
 import { HeadlineBlockComponent } from '@jgh-lib/ui/typographie/headline-block/headline-block.component';
 import { HighlightSliderComponent } from '@jgh-lib/ui/slider/highlight-slider/highlight-slider.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DottedSectionComponent } from '../shared/blocks/dotted-section/dotted-section.component';
 
 @NgModule({
   declarations: [GymLayoutComponent],
@@ -20,6 +22,8 @@ import { HighlightSliderComponent } from '@jgh-lib/ui/slider/highlight-slider/hi
     MasonryComponent,
     HeadlineBlockComponent,
     HighlightSliderComponent,
+    FontAwesomeModule,
+    DottedSectionComponent
   ],
 })
 export class ThegymModule {}

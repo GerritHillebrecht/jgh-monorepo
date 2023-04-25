@@ -1,36 +1,29 @@
-.scroll-wrapper {
-  -webkit-scrollbar-color: #6969dd #e0e0e0;
-  -webkit-scrollbar-width: thin;
-  scrollbar-color: #6969dd red;
-  scrollbar-width: thin;
+.shiny-headline {
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+  background-image: linear-gradient(
+    60deg,
+    #ffffff 28.57%,
+    transparent 28.57%,
+    transparent 50%,
+    #ffffff 50%,
+    #ffffff 78.57%,
+    transparent 78.57%,
+    transparent 100%
+  );
+  background-size: 182.76px 217.8px;
+  background-size: 182.76px 280.8px;
+  background-clip: text;
+  animation: shine 3s infinite linear;
+  mix-blend-mode: overlay;
+}
 
-  &::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+@keyframes shine {
+  0% {
+    background-position: 0 0;
   }
-
-  &::-webkit-scrollbar-track {
-    background: transparent;
+  100% {
+    background-position: 182.76px 0;
   }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-    max-height: 50px;
-    border-radius: 200px;
-  }
-
-  //   &::-webkit-scrollbar {
-  //     width: 0px;
-  //     height: 0px;
-  //   }
-
-  //   &::-webkit-scrollbar-track {
-  //     background: transparent;
-  //   }
-
-  //   &::-webkit-scrollbar-thumb {
-  //     background-color: #ccc;
-  //     max-height: 50px;
-  //     border-radius: 200px;
-  //   }
 }
