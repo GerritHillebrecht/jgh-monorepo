@@ -1,55 +1,42 @@
 <div
   *ngIf="course"
-  class="card group bg-stone-50 border-[1px] border-solid border-stone-100 rounded-md px-8 py-6 flex justify-between items-center hover:bg-red-500 hover:text-stone-50"
+  class="card group bg-stone-50 border-[1px] border-solid border-stone-100 rounded-md px-4 sm:px-8 py-6 flex justify-between items-center hover:bg-red-500 hover:text-stone-50"
 >
   <div class="flex flex-1 items-center gap-4 w-[15%]">
-    <div class="grid place-items-center w-10">
+    <div class="place-items-center w-10 hidden lg:grid">
       <fa-icon [icon]="course.icon" size="2xl"></fa-icon>
     </div>
     <div class="flex flex-1 flex-col gap-1">
-      <h3 class="text-sm flex gap-2">Course</h3>
-      <span class="font-bold text-xl">
+      <h3 class="text-xs sm:text-sm flex gap-2">Course</h3>
+      <span class="font-bold text-md sm:text-xl">
         {{ course.name }}
       </span>
     </div>
   </div>
   <div class="flex flex-1 flex-col gap-1">
-    <h3 class="text-sm">Time</h3>
-    <span class="font-bold text-xl">
-      {{ course.time }} - {{ course.duration }}min
+    <h3 class="text-xs sm:text-sm">Time</h3>
+    <span class="font-bold text-md sm:text-xl">
+      {{ course.time }}
     </span>
   </div>
-  <div class="flex flex-1 flex-col gap-1 w-[20%]">
-    <h3 class="text-sm">Trainer</h3>
-    <span class="font-bold text-xl">
-      {{ course.trainer }}
+  <div class="flex-1 flex-col gap-1 hidden sm:flex">
+    <h3 class="text-xs sm:text-sm">Duration</h3>
+    <span class="font-bold text-md sm:text-xl"> {{ course.duration }}min </span>
+  </div>
+  <div class="flex flex-1 flex-col gap-1 sm:w-[20%]">
+    <h3 class="text-xs sm:text-sm">Trainer</h3>
+    <span class="font-bold text-md sm:text-xl">
+      {{ course.trainer.firstname }}
+      <span class="hidden lg:inline">{{ course.trainer.lastname }}</span>
     </span>
   </div>
-  <div class="flex flex-1 flex-col gap-1">
-    <h3 class="text-sm">Location</h3>
-    <span class="font-bold text-xl">
+  <div class="hidden sm:flex flex-1 flex-col gap-1">
+    <h3 class="text-xs sm:text-sm">Location</h3>
+    <span class="font-bold text-md sm:text-xl">
       {{ course.location }}
     </span>
   </div>
-  <!-- <div class="flex flex-col gap-1 w-[20%] pt-12 justify-center">
-    <h3
-      class="text-sm group-hover:-translate-y-full group-hover:opacity-0 transition-all"
-    >
-      Trainer
-    </h3>
-    <div
-      class="px-4 pb-0 w-3/4 mx-auto bg-red-500 group-hover:bg-stone-100 rounded-xl flex justify-center"
-    >
-      <img
-        src="assets/images/models/model-male-2.png"
-        class="max-h-0 max-w-0 group-hover:max-h-[100px] group-hover:max-w-[50px] transition-all object-contain -mt-12"
-      />
-    </div>
-    <span class="font-bold text-sm tracking-[0.2] uppercase text-center">
-      {{ course.trainer }}
-    </span>
-  </div> -->
-  <div class="flex items-center">
-    <jgh-bt-cta>Ich will teilnehmen</jgh-bt-cta>
+  <div class="hidden sm:flex items-center">
+    <jgh-bt-cta>Teilnehmen</jgh-bt-cta>
   </div>
 </div>

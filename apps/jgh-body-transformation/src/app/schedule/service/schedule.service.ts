@@ -11,7 +11,10 @@ export interface Course {
   weekday: number;
   time: string;
   duration: number;
-  trainer: string;
+  trainer: {
+    firstname: string;
+    lastname: string;
+  };
   location?: string;
 }
 
@@ -45,7 +48,10 @@ export class ScheduleService {
           weekday: Math.floor(Math.random() * 7) | 0,
           time: Math.floor(Math.random() * 10) + 10 + ':00',
           duration: 60,
-          trainer: faker.name.fullName(),
+          trainer: {
+            firstname: faker.name.firstName(),
+            lastname: faker.name.lastName(),
+          },
           location: 'Gym 1',
         } satisfies Course)
     ),
@@ -57,7 +63,10 @@ export class ScheduleService {
       weekday: 0,
       time: '10:00',
       duration: 60,
-      trainer: 'John Doe',
+      trainer: {
+        firstname: 'John',
+        lastname: 'Doe',
+      },
       location: 'Gym 1',
     },
     {
@@ -68,7 +77,10 @@ export class ScheduleService {
       weekday: 0,
       time: '15:00',
       duration: 90,
-      trainer: 'John Doe',
+      trainer: {
+        firstname: 'John',
+        lastname: 'Doe',
+      },
       location: 'Gym 2',
     },
     {
@@ -79,7 +91,10 @@ export class ScheduleService {
       weekday: 0,
       time: '11:00',
       duration: 60,
-      trainer: 'John Doe',
+      trainer: {
+        firstname: 'John',
+        lastname: 'Doe',
+      },
       location: 'Gym 1',
     },
     {
@@ -90,7 +105,10 @@ export class ScheduleService {
       weekday: 1,
       time: '11:00',
       duration: 60,
-      trainer: 'John Doe',
+      trainer: {
+        firstname: 'John',
+        lastname: 'Doe',
+      },
       location: 'Gym 1',
     },
     {
@@ -101,7 +119,10 @@ export class ScheduleService {
       weekday: 1,
       time: '13:00',
       duration: 60,
-      trainer: 'John Doe',
+      trainer: {
+        firstname: 'John',
+        lastname: 'Doe',
+      },
       location: 'Gym 2',
     },
   ];

@@ -1,12 +1,12 @@
 <button
-  class="cta relative px-8 py-4 flex items-center gap-2"
+  class="cta relative px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 flex items-center gap-1 lg:gap-2"
   [ngClass]="{
     'after:border-white bg-stone-50 text-stone-800': !active,
     'after:border-red-600 bg-red-600 text-stone-50': active
   }"
 >
   <span
-    class="uppercase text-sm font-bold leading-none flex items-center relative top-[1px]"
+    class="uppercase text-xs sm:text-sm font-bold leading-none flex items-center relative top-[1px]"
   >
     <ng-content></ng-content>
   </span>
