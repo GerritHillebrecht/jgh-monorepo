@@ -17,6 +17,7 @@
   background-clip: text;
   animation: shine 3s infinite linear;
   mix-blend-mode: overlay;
+  background-position: center top;
 }
 
 @keyframes shine {

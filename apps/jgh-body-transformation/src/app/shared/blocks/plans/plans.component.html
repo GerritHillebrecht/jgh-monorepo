@@ -1,5 +1,5 @@
 <div
-  class="mx-auto max-w-7xl w-full py-10 px-8 grid grid-rows-3 grid-cols-1 lg:grid-rows-1 lg:grid-cols-[10fr,11fr,10fr]"
+  class="mx-auto max-w-7xl w-full py-10 px-4 lg:px-8 grid grid-rows-3 grid-cols-1 sm:grid-rows-1 sm:grid-cols-[10fr,11fr,10fr]"
   style="perspective: 700px"
 >
   <div
@@ -15,14 +15,13 @@
     }"
   >
     <div
-      class="bg-white hover:-translate-y-4 transition-all rounded-3xl overflow-hidden pt-12 flex flex-col justify-between gap-4 shadow-xl border-[1px] border-solid border-stone-100"
+      class="rounded-xl sm:rounded-2xl md:rounded-3xl bg-white hover:-translate-y-4 transition-all overflow-hidden pt-8 lg:pt-12 flex flex-col justify-between gap-4 shadow-xl border-[1px] border-solid border-stone-100 "
       [ngClass]="{
-        'rounded-tl-3xl rounded-bl-3xl': i === 0,
-        'rounded-3xl': i === 1,
-        'rounded-tr-3xl rounded-br-3xl': i === 2
+        'md:rounded-tr-none md:rounded-br-none': i === 0,
+        'md:rounded-tl-none md:rounded-bl-none': i === 2
       }"
     >
-      <main class="px-8">
+      <main class="px-4 lg:px-8">
         <jgh-lib-headline-block>
           <span subtitle class="text-stone-600">{{ plan.slogan }}</span>
           <span
@@ -31,7 +30,7 @@
           >
             {{ plan.name }}
           </span>
-          <span description class="text-stone-600">
+          <span description class="text-stone-600 text-xs lg:text-sm">
             {{ plan.description }}
           </span>
         </jgh-lib-headline-block>
