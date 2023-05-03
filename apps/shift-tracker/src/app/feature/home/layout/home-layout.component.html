@@ -1,0 +1,48 @@
+<main class="px-4 grid grid-rows-[max-content,_auto] gap-4 pb-4 w-full">
+  <div class="p-4 bg-white shadow-xl max-w-sm mx-auto w-full">
+    <mat-calendar
+      #calendar
+      [(selected)]="selected"
+      (selectedChange)="addDate($event)"
+      (monthSelected)="monthSelected($event)"
+    ></mat-calendar>
+  </div>
+  <div
+    class="relative flex flex-col gap-4"
+    *ngIf="shifts$ | async as shifts; else loading"
+  >
+    <mat-form-field class="example-chip-list" class="w-full">
+      <mat-label>Ausgewählte Tage</mat-label>
+      <mat-hint> Gewählte Daten </mat-hint>
+      <mat-chip-grid #chipGrid aria-label="Enter Dates">
+        <mat-chip-row
+          *ngFor="let shift of shifts"
+          (removed)="remove(shift)"
+          [editable]="true"
+          [aria-description]="'press enter to edit ' + shift.date"
+        >
+          {{ shift.date | date : 'shortDate' }}
+          <button matChipRemove [attr.aria-label]="'remove ' + shift.date">
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip-row>
+        <input
+          class="hidden"
+          placeholder="New Data..."
+          [matChipInputFor]="chipGrid"
+        />
+      </mat-chip-grid>
+    </mat-form-field>
+    <div class="date-container flex flex-col gap-4 w-full">
+      <ng-container *ngFor="let shift of shifts">
+        <div class="p-4 bg-rose-400"></div>
+      </ng-container>
+    </div>
+  </div>
+</main>
+
+<ng-template #loading>
+  <div class="mx-auto">
+    <mat-spinner [diameter]="40"></mat-spinner>
+  </div>
+</ng-template>

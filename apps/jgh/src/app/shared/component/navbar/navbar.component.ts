@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ToolbarComponent, UserDropdownComponent } from '@jgh-lib/ui';
+import { ToolbarComponent } from '@jgh-lib/ui/toolbar/toolbar.component';
+import { UserDropdownComponent } from '@jgh-lib/ui/user/user-dropdown/user-dropdown.component';
 
 @Component({
   selector: 'jgh-monorepo-navbar',

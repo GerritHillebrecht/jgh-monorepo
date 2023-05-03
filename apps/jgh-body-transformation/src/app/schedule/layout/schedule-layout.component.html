@@ -4,7 +4,10 @@
 >
   <jgh-lib-headline-block>
     <span subtitle class="text-stone-50">save the date</span>
-    <span class="uppercase text-stone-50 text-5xl sm:text-6xl lg:7xl 3xl:text-8xl">WELLSPIRIT DAY</span>
+    <span
+      class="uppercase text-stone-50 text-5xl sm:text-6xl lg:7xl 3xl:text-8xl"
+      >WELLSPIRIT DAY</span
+    >
     <span description class="text-stone-50">
       Our expert team of coaches helps you succeed in any goal. Make your body
       great again.
@@ -12,8 +15,10 @@
   </jgh-lib-headline-block>
 </jgh-lib-full-width-info-bar>
 <section class="dotted-background">
-  <div class="mx-auto max-w-7xl w-full py-12 flex flex-col gap-8">
-    <jgh-bt-weekday-selector></jgh-bt-weekday-selector>
+  <div class="mx-auto max-w-7xl w-full py-8 sm:py-12 flex flex-col gap-8">
+    <div class="px-4">
+      <jgh-bt-weekday-selector></jgh-bt-weekday-selector>
+    </div>
     <div
       class="flex flex-col gap-2 px-4"
       *ngIf="scheduleService.courses$ | async as courses; else loading"

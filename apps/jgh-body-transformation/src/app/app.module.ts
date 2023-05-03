@@ -31,6 +31,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MobileNavigationComponent } from './shared/navigation/mobile-navigation/mobile-navigation.component';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
@@ -40,6 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
     NavbarComponent,
     FooterComponent,
+    MobileNavigationComponent,
     FontAwesomeModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),

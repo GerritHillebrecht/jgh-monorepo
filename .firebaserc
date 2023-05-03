@@ -41,9 +41,16 @@
           "jgh-developement-car-rental"
         ]
       }
+    },
+    "jgh-shift-tracker": {
+      "hosting": {
+        "shift-tracker": [
+          "jgh-shift-tracker"
+        ]
+      }
     }
   },
   "projects": {
-    "default": "jgh-developement-car-rental"
+    "default": "jgh-shift-tracker"
   }
 }

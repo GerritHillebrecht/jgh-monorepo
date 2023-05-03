@@ -1,0 +1,59 @@
+<jgh-lib-full-width-info-bar height="lg">
+  <form [formGroup]="bmiForm" class="max-w-7xl w-full mx-auto">
+    <div class="grid grid-cols-2 p-2 sm:p-8 text-stone-50 gap-4 w-full portrait:sm:w-3/5 landscape:sm:w-2/5">
+      <h2 class="col-span-2 uppercase font-bold text-3xl">
+        Calculate your <span class="text-red-600">BMI</span>
+      </h2>
+      <p class="col-span-2 opacity-75">
+        Easily determine your body mass index with our accurate calculation
+        tool.
+      </p>
+      <div class="relative">
+        <mat-form-field floatLabel="always" class="w-full">
+          <mat-label>Height</mat-label>
+          <input
+            type="number"
+            formControlName="height"
+            matInput
+            placeholder="Height in cm"
+          />
+          <mat-hint>Height in meters</mat-hint>
+          <fa-icon
+            [icon]="height"
+            class="text-stone-600 mx-4"
+            size="xl"
+            matPrefix
+            >home</fa-icon
+          >
+        </mat-form-field>
+      </div>
+      <div class="relative">
+        <mat-form-field floatLabel="always" class="w-full">
+          <mat-label>Weight</mat-label>
+          <input
+            type="number"
+            formControlName="weight"
+            matInput
+            placeholder="Weight in kg"
+          />
+          <fa-icon
+            [icon]="weight"
+            class="text-stone-600 mx-4"
+            size="xl"
+            matPrefix
+            >home</fa-icon
+          >
+          <mat-hint>Weight in kg</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="mt-4">
+        <jgh-bt-cta [active]="true" (click)="calculateBMI()"
+          >Calculate</jgh-bt-cta
+        >
+      </div>
+      <div class="flex items-center">
+        <p *ngIf="bmi">BMI: {{ bmi }}</p>
+      </div>
+    </div>
+  </form>
+</jgh-lib-full-width-info-bar>

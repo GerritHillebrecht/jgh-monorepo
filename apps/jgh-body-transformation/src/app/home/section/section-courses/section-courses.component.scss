@@ -1,0 +1,15 @@
+.main-image {
+    animation: upDown 5s infinite alternate ease-in-out;
+}
+
+@keyframes upDown {
+    from {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5%) scale(1.05);
+    }
+    to {
+        transform: translateY(5%) scale(0.95);
+    }
+}

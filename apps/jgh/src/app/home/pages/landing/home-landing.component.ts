@@ -1,5 +1,14 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core';
 import { Application } from '@splinetool/runtime';
+import { BehaviorSubject, tap } from 'rxjs';
 
 @Component({
   selector: 'jgh-monorepo-home-landing',

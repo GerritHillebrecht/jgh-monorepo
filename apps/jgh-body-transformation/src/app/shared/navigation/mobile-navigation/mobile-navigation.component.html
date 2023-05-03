@@ -1,0 +1,61 @@
+<div
+  class="mobile-sidenav-backdrop fixed inset-0 z-[1000] pointer-events-none"
+  [ngClass]="{ 'backdrop-blur-lg bg-[rgb(0,0,0,0.45)]': navOpened$ | async }"
+>
+  <div
+    *ngIf="navOpened$ | async"
+    class="absolute inset-0 pointer-events-auto"
+    (click)="closeMobileNavigation()"
+  ></div>
+  <div
+    class="mobile-sidenav pointer-events-auto absolute top-0 h-full flex flex-col gap-8 bg-white z-[1000] right-0 py-12 overflow-x-hidden overflow-y-auto box-content"
+    [ngClass]="{
+      'w-[calc(90vw_-_4rem)] px-8': navOpened$ | async,
+      'w-0': (navOpened$ | async) === false
+    }"
+  >
+    <div class="flex gap-4 items-center">
+      <img src="assets/images/logo/gymbro.png" class="h-[80px]" />
+      <div>
+        <p class="font-bold text-3xl">GYMBRO</p>
+        <p class="uppercase text-xs ml-[3px] tracking-[0.2em] font-bold">
+          TOUGHEN UP
+        </p>
+      </div>
+    </div>
+    <div
+      (click)="requestMessagePermission()"
+      class="group grid rounded-3xl border-2 border-solid border-stone-200 place-items-center cursor-pointer p-[2px]"
+      matTooltip="Book your free trial today. Mo-Su 8am-10pm"
+    >
+      <div
+        class="px-4 py-2 rounded-3xl text-stone-200 group-hover:bg-stone-50 group-hover:text-stone-600 transition-all"
+      >
+        <span
+          class="uppercase font-bold block relative text-xs tracking-[0.2em]"
+        >
+          Free Trial
+        </span>
+      </div>
+    </div>
+    <ul class="-mx-8">
+      <li
+        *ngFor="let link of links; let i = index"
+        class="border-b-[1px] first-of-type:border-t-[1px] border-solid border-stone-200"
+      >
+        <a
+          class="flex px-8 py-4 gap-4 items-center p-2"
+          [routerLink]="link.path"
+          routerLinkActive="bg-red-600 text-stone-50"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="closeMobileNavigation()"
+        >
+          <fa-icon size="xl" [icon]="icons[i]"></fa-icon>
+          <span class="uppercase font-bold tracking-wide">
+            {{ link.label }}
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

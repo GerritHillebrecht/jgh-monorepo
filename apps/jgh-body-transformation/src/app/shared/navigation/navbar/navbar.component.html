@@ -22,8 +22,14 @@
         {{ link.label }}
       </button>
     </div>
+    <div class="lg:hidden">
+      <button (click)="navOpened$.next(true)" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
     <div
-      class="group rounded-3xl border-2 border-solid border-stone-50 grid place-items-center cursor-pointer p-[2px]"
+      (click)="requestMessagePermission()"
+      class="group hidden lg:grid rounded-3xl border-2 border-solid border-stone-50 place-items-center cursor-pointer p-[2px]"
       matTooltip="Book your free trial today. Mo-Su 8am-10pm"
     >
       <div

@@ -1,0 +1,23 @@
+<section class="py-8 sm:py-20">
+  <div
+    class="mx-auto max-w-[112.5rem] px-4 sm:px-8 w-full grid auto-rows-auto sm:grid-rows-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+  >
+    <div
+      *ngFor="let course of courses; let i = index"
+      class="course relative rounded-xl shadow-lg aspect-[1.334841628959276] overflow-hidden grid place-items-center bg-black"
+    >
+      <div
+        class="absolute inset-0 bg-center opacity-70 bg-cover"
+        [ngStyle]="{ 'background-image': 'url(' + course.image + ')' }"
+      ></div>
+
+      <div
+        class="main-image relative rounded-lg z-10 w-10/12 h-4/6 sm:w-9/12 sm:h-3/5 shadow-lg bg-rose-400 bg-center bg-cover"
+        [ngStyle]="{
+          'animation-delay': i * 0.4 + 's',
+          'background-image': 'url(' + course.image + ')'
+        }"
+      ></div>
+    </div>
+  </div>
+</section>

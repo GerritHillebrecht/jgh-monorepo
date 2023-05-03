@@ -13,6 +13,8 @@ import { TestimonialsSectionComponent } from './section/testimonials-section/tes
 import { DetailsSectionComponent } from './section/details-section/details-section.component';
 import { SectionDetailsComponent } from './section/section-details/section-details.component';
 import { SectionVideoComponent } from './section/section-video/section-video.component';
+import { SectionCoursesComponent } from './section/section-courses/section-courses.component';
+import { SectionBmiComponent } from './section/section-bmi/section-bmi.component';
 @NgModule({
   declarations: [HomeLayoutComponent],
   imports: [
@@ -31,6 +33,8 @@ import { SectionVideoComponent } from './section/section-video/section-video.com
     DetailsSectionComponent,
     SectionDetailsComponent,
     SectionVideoComponent,
+    SectionCoursesComponent,
+    SectionBmiComponent,
   ],
 })
 export class HomeModule {}

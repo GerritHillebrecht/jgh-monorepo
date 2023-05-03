@@ -14,6 +14,8 @@ import {
   provideFirestore,
   getFirestore,
   enableIndexedDbPersistence,
+  connectFirestoreEmulator,
+  CACHE_SIZE_UNLIMITED,
 } from '@angular/fire/firestore';
 import { provideMessaging, getMessaging } from '@angular/fire/messaging';
 import { providePerformance, getPerformance } from '@angular/fire/performance';
@@ -26,7 +28,15 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
+    provideFirestore(
+      () => {
+        const firestore = getFirestore();
+        connectFirestoreEmulator(firestore, 'localhost', 8080);
+        enableIndexedDbPersistence(firestore);
+        return firestore;
+      },
+      { cacheSizeBytes: CACHE_SIZE_UNLIMITED }
+    ),
     provideMessaging(() => getMessaging()),
     providePerformance(() => getPerformance()),
     provideStorage(() => getStorage()),
