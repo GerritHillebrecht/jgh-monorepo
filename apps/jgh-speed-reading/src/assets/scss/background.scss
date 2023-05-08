@@ -1,0 +1,10 @@
+.dotted-background {
+  background: radial-gradient(
+    circle,
+    rgba(230, 230, 230, 0.47) 10%,
+    transparent 11%
+  );
+  background-size: 2em 2em;
+  background-color: #ffffff;
+}
+

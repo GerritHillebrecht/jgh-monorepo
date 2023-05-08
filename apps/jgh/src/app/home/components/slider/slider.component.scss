@@ -13,6 +13,16 @@
         #0000006c 90%
       );
     }
+
+    &.dark {
+      &::after {
+        background-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 10%,
+          #000000cd 90%
+        );
+      }
+    }
   }
 }
 .gallery-thumbs {

@@ -10,13 +10,16 @@
         [ngStyle]="{
           'background-color': slide.image.backgroundColor || 'transparent'
         }"
+        [ngClass]="{ dark: slide.image.overlayIntensity === 'dark' }"
       >
         <div class="absolute inset-0 flex items-end z-10 text-stone-50">
           <div class="relative flex flex-col gap-2 w-[40%] px-16 pr-10 pb-24">
             <h2
               class="fadeInText text-[5rem] leading-tight font-black uppercase"
-              style="font-family: Inter, sans-serif;"
-              [ngClass]="{ active: i + 1 === activeSlideIndex }"
+              style="font-family: Inter, sans-serif"
+              [ngClass]="{
+                active: i + 1 === activeSlideIndex
+              }"
             >
               {{ slide.title }}
             </h2>
@@ -36,9 +39,9 @@
                 class="p-[2px] group border-solid border-[2px] border-stone-100 rounded-3xl font-bold flex items-center mt-4"
               >
                 <a
-                  href="https://body-transformation.jgh-dev.de"
+                  [href]="slide.href"
                   target="_blank"
-                  class="rounded-2xl group-hover:bg-stone-100 hover:text-stone-600 px-3 py-1 uppercase text-sm font-bold flex items-center gap-2"
+                  class="rounded-2xl text-stone-100 group-hover:bg-stone-100 hover:text-stone-600 px-3 py-1 uppercase text-sm font-bold flex items-center gap-2"
                 >
                   live-demo
                   <fa-icon [icon]="openLink"></fa-icon>
@@ -82,21 +85,10 @@
                   'background-image': 'url(' + slide.thumb.src + ')',
                   'background-position-x': slide.thumb.posX || 'center',
                   'background-position-y': slide.thumb.posY || 'center',
-                  'background-size': slide.thumb.fit || 'cover'
+                  'background-size': slide.thumb.fit || 'cover',
+                  'background-color': slide.thumb.backgroundColor || 'transparent'
                 }"
               ></div>
-              <!-- <img
-                class="h-full w-full rounded-lg max-h-full"
-                [ngStyle]="{
-                  'object-fit': slide.thumb.fit || 'cover',
-                  'object-position':
-                    slide.thumb.posX ||
-                    'center' + ' ' + slide.thumb.posY ||
-                    'center'
-                }"
-                [src]="slide.thumb.src"
-                alt=""
-              /> -->
               <div
                 class="absolute inset-0 p-8 flex flex-col flex-wrap justify-end gap-2 text-stone-50 z-10"
               >

@@ -1,0 +1,8 @@
+<section class="h-full flex flex-col items-center justify-between gap-8 w-full bg-purple-400 py-20">
+  <p class="text-feld">
+    <span *ngFor="let letter of ['l', 'e', 't', 't', 'e', 'r']; let i = index">
+      <span [ngClass]="{ 'opacity-100': i  }">{{ letter }}</span>
+    </span>
+  </p>
+  <jgh-kt-keyboard></jgh-kt-keyboard>
+</section>

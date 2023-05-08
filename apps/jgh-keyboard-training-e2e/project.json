@@ -1,0 +1,33 @@
+{
+  "name": "jgh-keyboard-training-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/jgh-keyboard-training-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/jgh-keyboard-training-e2e/cypress.config.ts",
+        "devServerTarget": "jgh-keyboard-training:serve:development",
+        "testingType": "e2e"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "jgh-keyboard-training:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "jgh-keyboard-training:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/jgh-keyboard-training-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["jgh-keyboard-training"]
+}

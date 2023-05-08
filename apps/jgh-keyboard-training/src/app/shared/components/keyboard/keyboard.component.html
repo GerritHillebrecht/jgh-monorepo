@@ -1,0 +1,16 @@
+<div class="mx-auto max-w-7xl w-full">
+  <div
+    class="keyboard bg-stone-300 shadow-xl flex flex-col gap-2 w-[1200px] p-4 rounded-xl"
+  >
+    <div
+      class="grid grid-cols-[repeat(auto-fit,minmax(0,1fr))] gap-2"
+      *ngFor="let keyRow of keyRows"
+    >
+      <jgh-kt-key
+        *ngFor="let key of keyRow"
+        [key]="key"
+        [active]="pressedKey().includes(key)"
+      ></jgh-kt-key>
+    </div>
+  </div>
+</div>

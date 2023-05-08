@@ -1,0 +1,10 @@
+.text-position-container {
+  span {
+    opacity: 0.25;
+
+    &.text-highlight {
+      opacity: 1;
+      position: relative;
+    }
+  }
+}

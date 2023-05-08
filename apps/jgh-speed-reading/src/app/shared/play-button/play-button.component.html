@@ -1,0 +1,13 @@
+<!-- Play Button -->
+<div
+  class="playButton border-2 group border-solid border-stone-200 p-[2px] rounded-xl"
+>
+  <div
+    class="flex flex-col items-center gap-[2px] cursor-pointer bg-stone-50 group-hover:bg-stone-200 p-8 rounded-lg"
+  >
+    <fa-icon [icon]="playState === 'play' ? pauseIcon : playIcon"></fa-icon>
+    <button class="uppercase tracking-[0.2em]">
+      {{ playState === 'play' ? 'pause' : 'Start' }} reading
+    </button>
+  </div>
+</div>

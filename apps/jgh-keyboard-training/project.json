@@ -1,0 +1,101 @@
+{
+  "name": "jgh-keyboard-training",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "jgh-kt",
+  "sourceRoot": "apps/jgh-keyboard-training/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/jgh-keyboard-training",
+        "index": "apps/jgh-keyboard-training/src/index.html",
+        "main": "apps/jgh-keyboard-training/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/jgh-keyboard-training/tsconfig.app.json",
+        "assets": [
+          "apps/jgh-keyboard-training/src/favicon.ico",
+          "apps/jgh-keyboard-training/src/assets"
+        ],
+        "styles": ["apps/jgh-keyboard-training/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "jgh-keyboard-training:build:production"
+        },
+        "development": {
+          "browserTarget": "jgh-keyboard-training:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "jgh-keyboard-training:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/jgh-keyboard-training/**/*.ts",
+          "apps/jgh-keyboard-training/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/jgh-keyboard-training/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "jgh-keyboard-training:build"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.rotateIn {
+  animation: rotateIn 0.7s ease-in-out both;
+  transform-origin: bottom center;
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
