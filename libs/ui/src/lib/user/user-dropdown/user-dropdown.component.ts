@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 import { AvatarComponent } from '../../avatar/avatar/avatar.component';
@@ -12,8 +12,9 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './user-dropdown.component.html',
   styleUrls: ['./user-dropdown.component.scss'],
 })
-export class UserDropdownComponent {
+export class UserDropdownComponent implements OnInit {
   @Input() user: User | undefined;
+
   ngOnInit(): void {
     console.log(this.user?.displayName);
   }

@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `<nav
     class="relative flex flex-row px-4 items-center h-14 sm:h-16 z-50 w-full"
-    [ngStyle]="{ top, position }"
+    [ngStyle]="{ top, position, backgroundColor, 'border-bottom': border }"
   >
     <ng-content></ng-content>
   </nav>`,
@@ -16,4 +16,6 @@ import { CommonModule } from '@angular/common';
 export class ToolbarComponent {
   @Input() position: 'fixed' | 'sticky' | 'relative' = 'sticky';
   @Input() top = '0px';
+  @Input() backgroundColor = 'transparent';
+  @Input() border = 'none';
 }

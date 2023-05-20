@@ -18,5 +18,5 @@ export class AvatarComponent {
   @Input() size = 40;
 
   protected _image =
-    'assets/images/background/text/default-background-example.jpg';
+    'assets/images/avatar/user.jpg';
 }

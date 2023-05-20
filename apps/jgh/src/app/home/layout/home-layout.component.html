@@ -1,0 +1,108 @@
+<jgh-monorepo-navbar></jgh-monorepo-navbar>
+<section
+  class="bg-[rgb(245,245,245)] relative h-[calc(100vh_-_3.5rem)] sm:h-[calc(100svh_-_4rem)] flex flex-col justify-center"
+>
+  <div
+    class="max-w-7xl w-full h-full mx-auto flex landscape:items-center portrait:flex-col landscape:flex-row gap-8 py-8 px-6 sm:px-12 lg:px-4"
+  >
+    <div
+      class="relative landscape:w-1/2 portrait:h-1/2 grid place-items-center py-8 landscape:pr-8"
+    >
+      <picture class="w-full h-full opacity-0">
+        <source srcset="assets/images/home/wd_1200.webp" type="image/webp" />
+        <source srcset="assets/images/home/wd_1200.png" type="image/png" />
+        <img
+          class="w-full h-full object-contain wiggle"
+          src="assets/images/home/wd.png"
+        />
+      </picture>
+    </div>
+    <div
+      class="landscape:w-1/2 portrait:h-1/2 flex flex-col gap-y-6 gap-x-2 portrait:justify-center justify-start items-start"
+    >
+      <p
+        class="text-4xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-bold text-stone-800 leading-relaxed"
+        style="font-family: 'Montserrat'"
+      >
+        <span
+          class="block opacity-0 fadeInRotate leading-[1.2]"
+          style="animation-delay: 0ms"
+        >
+          Turning Vision
+        </span>
+        <span
+          class="block opacity-0 fadeInRotate leading-[1.2]"
+          style="animation-delay: 150ms"
+        >
+          Into Reality With
+        </span>
+        <span
+          class="block opacity-0 fadeInRotate leading-[1.2]"
+          style="animation-delay: 300ms"
+        >
+          Code And Design.
+        </span>
+      </p>
+      <p
+        class="text-stone-800 opacity-80 leading-relaxed"
+        style="font-family: 'Merriweather'"
+      >
+        As a skilled full-stack developer, I am dedicated to turning ideas into
+        innovative web applications. Explore my latest projects and articles,
+        showcasing my expertise in React.js and web development.
+      </p>
+      <button
+        routerLink="/projects"
+        class="bg-stone-800 text-stone-50 flex gap-3 items-center px-5 py-[10px] rounded-md border-2 border-solid border-stone-50 hover:border-stone-800 hover:bg-stone-50 hover:text-stone-800 font-bold tracking-wide"
+      >
+        <span class="uppercase tracking-wider">Projects</span>
+        <fa-icon [icon]="iconArrowRight"></fa-icon>
+      </button>
+    </div>
+  </div>
+</section>
+<section class="min-h-screen bg-stone-900 flex items-center text-stone-50">
+  <div class="mx-auto max-w-7xl w-full flex flex-col py-10">
+    <jgh-lib-step-side-content-container gradientEnd="#0ea5e9" title="Welcome">
+      <div class="leadine-none">
+        {{ small$ | async }}
+        <jgh-monorepo-logo
+          [fontSize]="(small$ | async) ? '5rem' : '8rem'"
+        ></jgh-monorepo-logo>
+      </div>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta cum at
+        impedit, hic alias quam ullam maxime vero? Iure in repellendus
+        temporibus dolore iste explicabo officia nisi, sequi dolores amet!
+      </p>
+      <div class="grid grid-cols-3 mt-10">
+        <jgh-lib-shiny-cards></jgh-lib-shiny-cards>
+      </div>
+    </jgh-lib-step-side-content-container>
+    <jgh-lib-step-side-content-container
+      gradientStart="#0ea5e9"
+      gradientEnd="#a3e635"
+      title="Projects"
+    >
+      <h2 class="text-4xl sm:text-9xl font-bold leading-loose">Welcome</h2>
+    </jgh-lib-step-side-content-container>
+  </div>
+</section>
+<section class="min-h-screen flex items-start py-20 justify-center">
+  <jgh-lib-step-indicator>
+    <ng-container title>Selection.</ng-container>
+    <ng-container headline>Hi, was geht ab?</ng-container>
+  </jgh-lib-step-indicator>
+</section>
+<section class="min-h-screen flex">
+  <div class="w-full max-w-5xl mx-auto grid grid-cols-2 gap-10">
+    <div
+      #card1
+      class="card-one border-2 border-solid border-stone-400 rounded-xl aspect-[9/16]"
+    ></div>
+    <div
+      #card2
+      class="card border-2 border-solid border-stone-400 rounded-xl aspect-[9/16]"
+    ></div>
+  </div>
+</section>

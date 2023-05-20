@@ -1,6 +1,13 @@
-<jgh-lib-toolbar>
-  <div class="flex w-full justify-between mx-auto max-w-7xl">
-    <img>
+<jgh-lib-toolbar backgroundColor="rgb(245 245 245)" border="1px solid #d6d3d1">
+  <div
+    class="relative flex w-full items-center justify-between mx-auto max-w-7xl isolate"
+  >
+    <div class="links">
+      <div class="link">Home</div>
+    </div>
     <jgh-lib-user-dropdown></jgh-lib-user-dropdown>
+    <div class="absolute inset-0 flex justify-center items-center -z-10">
+      <jgh-monorepo-logo fontSize="2.5rem" [shiny]="false"></jgh-monorepo-logo>
+    </div>
   </div>
 </jgh-lib-toolbar>

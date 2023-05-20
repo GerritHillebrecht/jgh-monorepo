@@ -1,0 +1,143 @@
+<div class="gallery relative" [ngStyle]="{ height }">
+  <!-- Slider main container -->
+  <div #swiper class="swiper swiper-no-swiping gallery-slider">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div
+        *ngFor="let slide of slides; let i = index"
+        class="swiper-slide relative"
+        [ngStyle]="{
+          'background-color': slide.image.backgroundColor || 'transparent'
+        }"
+        [ngClass]="{ dark: slide.image.overlayIntensity === 'dark' }"
+      >
+        <div class="absolute inset-0 grid portrait:grid-rows-[80%,auto] portrait:sm:grid-cols-[75%,auto] landscape:grid-cols-[35%,auto] items-center z-10 text-stone-50">
+          <div class="relative flex flex-col gap-2 w-full px-8 sm:px-12 lg:px-16 sm:pr-10">
+            <h2
+              class="fadeInText text-4xl md:text-[3.5rem] lg:text-[4.5rem] leading-tight font-black uppercase"
+              style="font-family: Inter, sans-serif"
+              [ngClass]="{
+                active: i + 1 === activeSlideIndex
+              }"
+            >
+              {{ slide.title }}
+            </h2>
+            <p
+              class="fadeInText leading-relaxed text-sm sm:text-base sm:opacity-80"
+              [ngClass]="{ active: i + 1 === activeSlideIndex }"
+              style="transition-delay: 550ms"
+            >
+              {{ slide.subtitle }}
+            </p>
+            <div
+              [ngClass]="{ active: i + 1 === activeSlideIndex }"
+              class="fadeInText btn flex"
+              style="transition-delay: 700ms"
+            >
+              <div
+                class="p-[2px] group border-solid border-[2px] border-stone-100 rounded-3xl font-bold flex items-center mt-4"
+              >
+                <a
+                  [href]="slide.href"
+                  target="_blank"
+                  class="rounded-2xl text-stone-100 group-hover:bg-stone-100 hover:text-stone-600 px-3 py-1 uppercase text-sm font-bold flex items-center gap-2"
+                >
+                  live-demo
+                  <fa-icon [icon]="openLink"></fa-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          class="w-full h-full"
+          [src]="slide.image.src"
+          alt=""
+          [ngStyle]="{
+            'object-fit': slide.image.fit || 'cover',
+            'object-position':
+              slide.image.posX || 'center' + ' ' + slide.image.posY || 'center'
+          }"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute inset-0 grid items-end z-10 pointer-events-none">
+    <div class="landscape:ml-[40%] w-full landscape:w-[60%] pl-4 sm:pl-8 landscape:pl-0 flex flex-col gap-4 pointer-events-auto">
+      <h1 class="hidden sm:block uppercase text-5xl text-stone-50 font-black opacity-75">
+        Projects
+      </h1>
+
+      <div class="rounded-xl overflow-hidden">
+        <div class="swiper gallery-thumbs">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div
+              *ngFor="let slide of slides"
+              class="swiper-slide mr-3 sm:mr-4 lg:mr-8 w-[33%] portrait:aspect-[16/13] landscape:aspect-[13/16] overflow-hidden relative rounded-xl cursor-pointer grid place-items-center border-[1px] border-solid border-[rgba(245,245,244,0.4)] p-[3px]"
+            >
+              <div
+                class="bg-image relative hover:scale-105 h-full w-full rounded-lg bg-no-repeat"
+                [ngStyle]="{
+                  'background-image': 'url(' + slide.thumb.src + ')',
+                  'background-position-x': slide.thumb.posX || 'center',
+                  'background-position-y': slide.thumb.posY || 'center',
+                  'background-size': slide.thumb.fit || 'cover',
+                  'background-color': slide.thumb.backgroundColor || 'transparent'
+                }"
+              ></div>
+              <div
+                class="absolute inset-0 p-3 sm:p-8 flex flex-col flex-wrap justify-end gap-2 text-stone-50 z-10"
+              >
+                <div class="tags flex gap-2 items-center w-full">
+                  <div
+                    class="chip group rounded-2xl p-[1px] border-[1px] border-solid border-stone-100 hidden sm:flex items-center"
+                    *ngFor="let tag of slide.thumb.tags"
+                  >
+                    <span
+                      class="px-2 py-[2px] rounded-xl text-xs font-bold group-hover:bg-stone-100 group-hover:text-stone-600"
+                    >
+                      {{ tag }}
+                    </span>
+                  </div>
+                </div>
+                <h2
+                  class="font-bold uppercase text-sm sm:text-2xl"
+                  style="font-family: Inter, sans-serif"
+                >
+                  {{ slide.title }}
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-4 pb-4 pr-4 items-center">
+        <div class="swiper-controls flex gap-4 text-[rgba(245,245,244,0.3)]">
+          <div
+            class="swiper-btn-prev cursor-pointer rounded-full h-16 w-16 border-2 border-solid border-[rgba(245,245,244,0.3)] hover:border-stone-100 hover:text-stone-100 grid place-items-center"
+          >
+            <fa-icon [icon]="btnPrevious"></fa-icon>
+          </div>
+          <div
+            class="swiper-btn-next cursor-pointer rounded-full h-16 w-16 border-2 border-solid border-[rgba(245,245,244,0.3)] hover:border-stone-100 hover:text-stone-100 grid place-items-center"
+          >
+            <fa-icon [icon]="btnNext"></fa-icon>
+          </div>
+        </div>
+        <div class="main-scrollbar relative grow shrink-0 flex items-center">
+          <div class="swiper-scrollbar"></div>
+        </div>
+        <span
+          class="text-stone-200 text-3xl"
+          style="font-family: 'Roboto Slab', serif"
+        >
+          {{ activeSlideIndex | leadingZero }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

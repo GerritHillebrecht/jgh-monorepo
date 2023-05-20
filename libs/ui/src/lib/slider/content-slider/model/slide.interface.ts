@@ -6,7 +6,7 @@ export interface ContentSliderSlide {
     text: string;
     tags?: string[];
   };
-  cta: {
-    text: string;
+  cta?: {
+    text?: string;
   };
 }
